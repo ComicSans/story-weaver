@@ -320,6 +320,7 @@ Mit knapper Not gelingt es dir, der Bestie zu entkommen und dich zurück zur Wag
 Niemand widerspricht dir. Die Kutscher spannen die Tiere wieder an, und der Zug rollt weiter, während hinter euch im Geröll etwas mitgeht, das keine Schritte macht. Geschlafen wird in dieser Nacht nicht.
 
 ~ wachen_fails = 3
+~ fatigue = fatigue + 2
 
 * [Trotz Erschöpfung weitermarschieren](#nacht-2-auswertung)
 
@@ -417,7 +418,7 @@ Der Frost sitzt dir mittlerweile im Rücken, und der Osten ist noch immer schwar
 
 Am dritten Tag steht der Wagenzug vor einer Weggabelung.
 
-{ fatigue >= 2 }
+{ fatigue >= 1 }
   Du siehst die beiden Wege durch einen Schleier aus zwei durchwachten Nächten. Deine Beine gehören dir nur noch teilweise, und jede der beiden Richtungen sieht nach demselben Elend aus.
 { else }
   Du bist müde, aber klar im Kopf, und siehst den beiden Wegen an, welcher von ihnen wovon zu viel hat.
