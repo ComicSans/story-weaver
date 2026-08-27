@@ -79,6 +79,15 @@ the keys that do not exist on the other side are kept in the save but ignored
 while reading, and switching back restores them. Nothing is discarded, because a
 reader who switches twice should not lose a once-only line they already saw.
 
+**A language the book does not have is refused.** `story.languages` is the
+list, and both the `lang` option of the constructor and `setLanguage` throw for
+anything outside it. That matters to a host that takes its language from
+somewhere other than the book: a page, an app, the system. A book may exist in
+one language while the surface around it exists in two, and handing that
+surface's language to a book that never declared it fails before the first line
+is drawn. So the host picks, rather than passing its own language through: what
+the surface asks for when `languages` contains it, `meta.default` otherwise.
+
 Text is delivered as an array of paragraphs, each with its CSS classes, so
 the host decides how to render. An image is an entry in that same array,
 carrying `image` and `alt` where a paragraph carries `text` (SPEC 5.9). Combat is
