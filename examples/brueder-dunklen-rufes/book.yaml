@@ -1,9 +1,28 @@
 # SPDX-License-Identifier: MPL-2.0
-title: Brüder dunklen Rufs
+#
+# Nacherzählt nach einer Idee aus dem Podcast Over the Hills, Folge 47:
+# "Adventure Docs 1: Brüder dunklen Rufes", erschienen am 17.07.2026.
+# https://othpodcast.wordpress.com/2026/07/17/47-adventure-docs-1-bruder-dunklen-rufes/
+#
+# In der Folge stellt Vaylan das Abenteuer vor und Lubo nimmt es
+# auseinander - ein Einstiegsabenteuer für Fantasy-Runden zum Selberleiten.
+# Von dort stammt die Anlage: der Geleitschutz für sieben Wägen, der
+# Auftraggeber, der das Überleben der Kutscher ausdrücklich nicht vergütet,
+# der Mann mit dem besseren Angebot am Nebentisch. Der Wortlaut hier ist
+# nicht der ihre: dieses Buch ist eine eigene Ausformulierung für ein
+# Spielbuch und keine Abschrift, und es beansprucht nichts an ihrem Text.
+title: Brüder dunklen Rufes
 blurb: "Sieben Wagen, zehn Kutscher, deren Überleben ausdrücklich nicht vergütet wird, und ein Wald, über den man in letzter Zeit nur schlecht redet. Ein Spielbuch über Geleitschutz, ein zweifelhaftes Angebot am Nebentisch und die Frage, was auf dem zweiten Wagen liegt."
 author: Story Weaver
 version: 0.1.0
 start: prolog.start
+
+# Einsprachig, als einziges Buch hier. Ohne diesen Block hieße die Sprache
+# intern "default"; so heißt sie de, und ein Host, der nach Sprachen fragt,
+# bekommt eine Antwort statt eines Platzhalters.
+languages:
+  default: de
+  available: [de]
 
 chapters:
   - prolog.md

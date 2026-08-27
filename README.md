@@ -93,13 +93,18 @@ reader is doing anything. You can play it
 value a surrounding app supplies, an event that comes due, and a way in for
 an app. German is its default language, English its translation.
 
-**`brueder-dunklen-rufs/`** is the plainest of them and the largest: 69
+**`brueder-dunklen-rufes/`** is the plainest of them and the largest: 69
 nodes, no facts, no events, no places, no pictures, one language. Seven
 wagons to escort, a man in a patchwork coat with a better offer, two fights
 and two nights of watch duty. It earns its place by being ordinary - the
 book an author writes when nothing about the book is unusual - and by being
 the only monolingual one, which is what keeps the language table optional
-rather than assumed.
+rather than assumed. The adventure is not this project's invention: it is
+retold from [Over the Hills #47, "Adventure Docs 1: Brüder dunklen
+Rufes"](https://othpodcast.wordpress.com/2026/07/17/47-adventure-docs-1-bruder-dunklen-rufes/),
+where Vaylan presents it and Lubo takes it apart. The wording here is this
+project's own and no line of theirs is reproduced; the adventure behind it
+is theirs.
 
 **`intercept/`** is not written in this language at all. It is inkle's own
 ink demo, *The Intercept*, put through `import`, and it earns its place by
