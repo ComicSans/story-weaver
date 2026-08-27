@@ -8,6 +8,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { fileURLToPath } from 'node:url';
+import { stdout } from 'node:process';
 import { dirname, join } from 'node:path';
 
 import { compileFile } from '../src/compile.js';
@@ -41,6 +42,47 @@ test('the script reports the state a tool needs', async () => {
   assert.ok('fear' in result.stats);
   assert.ok(Array.isArray(result.inventory));
   assert.equal(typeof result.rolls, 'number');
+});
+
+/** Fängt ab, was `play` in das Terminal schreibt. */
+async function gedruckt(options) {
+  const schrieb = stdout.write;
+  const stuecke = [];
+  stdout.write = (text) => { stuecke.push(text); return true; };
+  try {
+    await play(options.story, { seed: 1, script: [], ...options });
+  } finally {
+    stdout.write = schrieb;
+  }
+  return stuecke.join('');
+}
+
+test('der Charakterbogen im Terminal lässt namenlose Werte weg', async () => {
+  // SPEC 7: ein Stat ohne `name:` ist intern - er treibt die Geschichte, und
+  // kein Leser liest ihn. `view.js` filtert im Browser danach, `play` tat es
+  // nicht. Sichtbar wurde es an `examples/intercept`, das 43 importierte
+  // Zähler trägt und keinen einzigen Wert, den ein Leser lesen soll.
+  const { story } = compile('# A {#a}\n\nText.\n\n-> END\n', {
+    frontmatter: '---\ntitle: Test\nstats:\n  mut: { name: Mut, start: 3 }\n  zaehler: { start: 7 }\n---\n',
+  });
+
+  const seite = await gedruckt({ story });
+  assert.match(seite, /Mut 3/);
+  assert.doesNotMatch(seite, /zaehler/, 'der interne Zähler steht nicht auf dem Bogen');
+
+  const fuerWerkzeuge = await play(story, { seed: 1, script: [], quiet: true });
+  assert.equal(fuerWerkzeuge.stats.zaehler, 7, 'ein Werkzeug bekommt ihn weiterhin');
+});
+
+test('ein Buch ohne einen einzigen benannten Wert bekommt keine leere Bogenzeile', async () => {
+  // Das minimale Frontmatter der Testhelfer trägt nur `gold: { start: 1 }`,
+  // also ohne `name:`. Ein Filter allein liefe hier auf eine Zeile aus
+  // Leerzeichen hinaus, und die sieht im Terminal wie ein Darstellungsfehler
+  // aus.
+  const { story } = compile('# A {#a}\n\nText.\n\n-> END\n');
+  const seite = await gedruckt({ story });
+  assert.doesNotMatch(seite, /\n\n\n/, 'keine Leerzeile, wo der Bogen stünde');
+  assert.doesNotMatch(seite, /gold/);
 });
 
 test('simulate finds every ending and no dead end', () => {

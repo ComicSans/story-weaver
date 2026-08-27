@@ -161,12 +161,31 @@ function render(s) {
     s.current.choices.forEach((choice, i) => out.push(`  ${i + 1}) ${choice.label}`));
   }
 
-  out.push(`\n${stats(s)}`);
+  const sheet = stats(s);
+  if (sheet) out.push(`\n${sheet}`);
   return out.join('\n');
 }
 
+/**
+ * Der Charakterbogen als eine Zeile.
+ *
+ * Ein Stat ohne `name:` im Frontmatter ist intern (SPEC 7): er treibt die
+ * Geschichte, und kein Leser liest ihn. Die Runtime markiert ihn deshalb mit
+ * `named: false`, `view.js` filtert im Browser danach, und hier fehlte der
+ * Filter - `examples/intercept` schob dem Leser damit 43 importierte Zähler
+ * unter jede Seite, von `seen_tellme 0` bis `DEBUG 0`.
+ *
+ * Erreichbar bleibt der Wert trotzdem: `--json` in `runScript` gibt jeden
+ * heraus, denn wer ein Buch debuggt, will die Zähler sehen. Das ist die
+ * Trennung, die 7 zieht - nicht der Bogen, sondern das Werkzeug bekommt alles.
+ *
+ * Ist kein einziger Wert benannt, gibt es gar keine Zeile statt einer leeren.
+ */
 function stats(s) {
-  return s.stats.map((x) => `${x.label} ${x.value}${x.max ? `/${x.max}` : ''}`).join('   ');
+  return s.stats
+    .filter((x) => x.named)
+    .map((x) => `${x.label} ${x.value}${x.max ? `/${x.max}` : ''}`)
+    .join('   ');
 }
 
 function inventory(s) {
