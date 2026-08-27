@@ -70,7 +70,7 @@ comes to 217 kB, nearly all of it story.
 
 ## The examples
 
-`examples/` holds four books written for this project and one imported one.
+`examples/` holds five books written for this project and one imported one.
 Each is there to fail differently.
 
 **`thornwood-book/`** is the smallest complete book: character creation, a
@@ -92,6 +92,14 @@ reader is doing anything. You can play it
 **`leuchtturm/`** is the smallest book of the newest layer: a picture, a
 value a surrounding app supplies, an event that comes due, and a way in for
 an app. German is its default language, English its translation.
+
+**`brueder-dunklen-rufs/`** is the plainest of them and the largest: 69
+nodes, no facts, no events, no places, no pictures, one language. Seven
+wagons to escort, a man in a patchwork coat with a better offer, two fights
+and two nights of watch duty. It earns its place by being ordinary - the
+book an author writes when nothing about the book is unusual - and by being
+the only monolingual one, which is what keeps the language table optional
+rather than assumed.
 
 **`intercept/`** is not written in this language at all. It is inkle's own
 ink demo, *The Intercept*, put through `import`, and it earns its place by

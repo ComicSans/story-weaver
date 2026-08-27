@@ -1,0 +1,76 @@
+# SPDX-License-Identifier: MPL-2.0
+title: Brüder dunklen Rufs
+blurb: "Sieben Wagen, zehn Kutscher, deren Überleben ausdrücklich nicht vergütet wird, und ein Wald, über den man in letzter Zeit nur schlecht redet. Ein Spielbuch über Geleitschutz, ein zweifelhaftes Angebot am Nebentisch und die Frage, was auf dem zweiten Wagen liegt."
+author: Story Weaver
+version: 0.1.0
+start: prolog.start
+
+chapters:
+  - prolog.md
+  - akt-1.md
+
+stats:
+  # Geschicklichkeit trägt die Proben, bei denen es auf Auge und Hand
+  # ankommt: die Nachtwachen, der Blick in den Kadaver, der Wurfstein. Sie
+  # steht auch in der Kampfformel, und deshalb braucht sie den
+  # Fighting-Fantasy-Bereich 7 bis 12 und nicht die 2 bis 12 eines blanken
+  # 2W6: gegen Goblins mit Geschick 6 wäre eine 3 kein Charakter, sondern
+  # ein Todesurteil vor der ersten Runde.
+  skill:    { name: Geschicklichkeit, start: "roll(1,6) + 6",  max: start }
+  stamina:  { name: Ausdauer,         start: "roll(2,6) + 12", max: start }
+  # Athletik trägt die Verfolgungsjagd und das Durchhalten in der zweiten
+  # Nacht.
+  athletik: { name: Athletik,         start: "roll(1,6) + 6",  max: start }
+  # Der Beutel ist leer, bis Olric ihn über den Tisch schiebt.
+  gold:     { name: Gold,             start: 0 }
+  waegen:   { name: Wägen,            start: 7 }
+  ruf:      { name: Ruf,              start: 0 }
+  fatigue:  { name: Erschöpfung,      start: 0, max: 10 }
+  # Interne Zähler ohne name: - sie steuern die Geschichte, stehen aber auf
+  # keinem Charakterbogen.
+  wagen_distanz: { start: 0 }
+  wachen_fails:  { start: 0 }
+
+checks:
+  dice: "roll(2,6)"
+  succeeds: at-most
+
+combat:
+  attack: "skill + roll(2,6) + weapon_attack"
+  damage: "max(weapon_damage, 2) - armour_defence"
+  rule: higher-wins
+
+enemies:
+  goblins:
+    name: Goblins
+    skill: 6
+    stamina: 8
+    flee_after: 3
+    strings:
+      combat.hit:   "{&Deine Klinge findet einen der Goblins.|Du triffst, und der Getroffene kreischt.|Ein Goblin geht rückwärts und fällt.}"
+      combat.taken: "{&Ein Goblin kommt an deiner Deckung vorbei.|Etwas Rostiges erwischt dich am Arm.}"
+      combat.tie:   "Die Klingen kreuzen sich ohne Treffer."
+      combat.down:  "Der letzte Goblin lässt los und verschwindet im Unterholz."
+  schattenbestie:
+    name: Schattenbestie
+    skill: 9
+    stamina: 16
+    flee_after: 3
+    strings:
+      combat.hit:   "{&Du triffst - diesmal steht sie dort, wo sie aussieht.|Dein Hieb geht durch etwas, das nachgibt.}"
+      combat.taken: "{&Ein Tentakel findet dich aus einer Richtung, in der nichts stand.|Der Schlag kommt von links, und links war sie nicht.}"
+      combat.tie:   "Du schlägst zu und triffst die Luft, in der sie eben noch war."
+      combat.down:  "Die Bestie sackt zusammen, und ihr Umriss steht noch einen Atemzug daneben."
+
+death:
+  when: "stamina <= 0"
+  goto: akt-1.tod
+
+undo:
+  depth: 10
+
+strings:
+  combat.hit:   "Du triffst {enemy}."
+  combat.taken: "{enemy} trifft dich."
+  combat.tie:   "Die Klingen kreuzen sich ohne Treffer."
+  combat.down:  "{enemy} geht zu Boden und bleibt liegen."
