@@ -7,7 +7,7 @@ title: Akt I - Die Reise des Wagenzugs
 Der Wagenzug bricht auf. Das Knarren der Holzräder und das Rufen der Kutscher begleiten deinen Start in ein raues, wildes Land. Zerklüftete Felsformationen ragen wie steinerne Zähne am Horizont empor. Der Pfad ist kaum mehr als eine ausgefahrene Furche im kargen Boden, umgeben von dichtem, undurchdringlichem Gestrüpp und dem ewigen Pfeifen des Windes.
 
 { knows("PARTNER") }
-  Am Rand des Schlammwegs lehnt Crighton an einem morschen Zaunpfahl, den Flickenmantel fest um die Schultern gezogen. Als du vorbeimarschierst, zieht er die Mundwinkel hoch und tippt sich an die Stirn. "Keine Eile, Partner", murmelt er leise im Gehen. "Lass uns abwarten, bis der Wald die Kutscher nervös macht."
+  Am Wegrand lehnt Crighton an einem morschen Zaunpfahl, den Flickenmantel fest um die Schultern gezogen. Als du vorbeimarschierst, zieht er die Mundwinkel hoch und hebt zwei Finger zum Gruß. "Keine Eile, Partner", murmelt er leise im Gehen. "Lass uns abwarten, bis der Wald die Kutscher nervös macht."
 { knows("CRIGHTON") }
   Am Rand des Weges entdeckst du Crighton. Er stützt sich gelassen auf sein Rapier und nickt dir mit einem schiefen Grinsen zu. Er scheint der Karawane mit einigem Abstand zu folgen.
 
@@ -16,7 +16,7 @@ Der Wagenzug bricht auf. Das Knarren der Holzräder und das Rufen der Kutscher b
 
 # Der Goblinüberfall {#goblinueberfall}
 
-Am Nachmittag schlägt das Schicksal zu. Schrille Schreie hallen durch das Unterholz. Eine Gruppe gieriger Goblins stürzt aus dem Dickicht auf den Treck zu. Ihr Ziel ist eindeutig: Sie wollen einen der beladenen Wagen kapern und abhängen.
+Am Nachmittag schlägt das Schicksal zu. Schrille Schreie hallen durch das Unterholz. Eine Gruppe gieriger Goblins stürzt aus dem Dickicht auf den Treck zu. Ihr Ziel ist eindeutig: Sie wollen einen der beladenen Wägen kapern und abhängen.
 
 { knows("PARTNER") }
   Aus dem Hinterhalt taucht Crighton an deiner Seite auf. Er zieht sein Rapier mit einem metallischen Zischen. "Zeit, unser Eigentum zu beschützen!", ruft er dir zu.
@@ -31,21 +31,21 @@ Sie kommen zu dritt auf dich zu, krummbeinig und viel zu schnell für ihre Grö�
 
 !combat goblins
   win  -> goblin-sieg
-  flee [Zurückweichen und den Wagen fahren lassen](#goblin-flucht) Du gibst den Weg frei, und die Kutscher geben ihn mit dir frei.
+  flee [Zurückweichen](#goblin-flucht) Du gibst den Weg frei, und die Kutscher geben ihn mit dir frei.
 
 # Ein Wagen rollt den Hang hinab {#goblin-sieg}
 
 Die Goblins sind besiegt oder in die Flucht geschlagen. Doch während des Getümmels hat sich ein kleinerer Trupp einen der Gepäckwagen geschnappt und schiebt ihn hastig einen Hang hinab.
 
 { knows("PARTNER") }
-  Crighton flucht. "Das ist genau der Wagen mit der interessanten Fracht! Den dürfen wir nicht verlieren!"
+  Crighton flucht. "Jeder Wagen, der fehlt, ist einer, den wir nicht mehr durchsuchen können!"
 
 * [Dem flüchtenden Wagen hinterherjagen](#wagen-verfolgen)
 * [Genug Abenteuer für heute - den Wagen aufgeben](#wagen-aufgeben)
 
 # Zurückgewichen {#goblin-flucht}
 
-Du musstest vor den Goblins zurückweichen. Die Kreaturen haben die Gunst der Stunde genutzt und sich einen Wagen geschnappt.
+Du musstest vor den Goblins zurückweichen. Die Kreaturen haben die Gunst der Stunde genutzt und sich einen Wagen geschnappt. Er poltert schon den Hang hinunter.
 
 * [Versuchen, den Wagen einzuholen](#wagen-verfolgen)
 * [Den Wagen entkommen lassen](#wagen-aufgeben)
@@ -85,7 +85,7 @@ Du wirfst alles in die Waagschale und sprintest auf dem ausgefahrenen Weg hinter
 Du verlässt den Pfad und springst über gefährliche Felsblöcke, um den Weg des Wagens zu schneiden.
 
 { roll(2,6) + athletik >= 18 }
-  Ein gewagter Sprung setzt dich direkt neben die flüchtenden Goblins.
+  Ein gewagter Sprung bringt dich ein gutes Stück an die flüchtenden Goblins heran.
   ~ wagen_distanz = wagen_distanz - 2
 { else }
   Du knickst auf einem matschigen Vorsprung um und knallst gegen einen Felsen. Das kostet Zeit und Kraft.
@@ -150,9 +150,9 @@ Die Dunkelheit bricht herein. Der Wagenzug formiert sich zu einer schützenden W
 Du spähst aufmerksam in die Finsternis. Die Büsche knistern im Wind... Ist da etwas?
 
 { knows("PARTNER") }
-  Ein Schatten löst sich lautlos aus der Dunkelheit. Crighton setzt sich neben dich ans Erdlager. "Gute Schicht zum Pläne schmieden", raunt er. "Sobald wir den Gebirgspass erreichen, greifen wir uns die Kiste."
+  Ein Schatten löst sich lautlos aus der Dunkelheit. Crighton setzt sich neben dich ans Wachfeuer. "Gute Schicht zum Pläne schmieden", raunt er. "Sobald wir den Gebirgspass erreichen, greifen wir uns das Artefakt."
 { knows("CRIGHTON") }
-  Ein leises Rascheln lässt dich den Griff um dein Schwert verstärken. Crighton tritt mit gehobenen Händen ins schwache Licht deiner Fackel. "Immer noch aufrechter Beschützer?", stichelt er leise. "Du weißt nicht einmal, was du da bewachst. Olric lässt nicht nur Vorräte transportieren. Im zweiten Wagen liegt eine beschlagene Holzkiste - schwer wie Blei und mit Siegeln versehen, die man nicht ohne Grund anbringt."
+  Ein leises Rascheln lässt dich den Griff um dein Schwert verstärken. Crighton tritt mit gehobenen Händen ins schwache Licht deiner Fackel. "Immer noch der ehrliche Geleitschutz?", stichelt er leise. "Du weißt nicht einmal, was du da bewachst. Olric lässt nicht nur Vorräte transportieren. Im zweiten Wagen liegt eine beschlagene Holzkiste - schwer wie Blei und mit Siegeln versehen, die man nicht ohne Grund anbringt."
 
 * [Aufmerksam bleiben und die Büsche beobachten](#wache-1-probe)
 * {knows("CRIGHTON") and not knows("PARTNER")} [Auf sein Angebot eingehen und dich doch mit ihm verbünden](#crighton-nacht-verbuenden)
@@ -237,7 +237,7 @@ Die Wachen sind kurz vor Sonnenaufgang nicht aufmerksam genug und schlagen wegen
 # Die erste Nacht {#nacht-1-auswertung}
 
 { wachen_fails >= 2 }
-  Aufgrund der vielen Fehlalarme und Unruhen im Lager war an erholsamen Schlaf für die Karawane nicht zu denken.
+  Die Nacht war schlecht bewacht, und an erholsamen Schlaf war für die Karawane nicht zu denken.
 { else }
   Die Nacht verläuft insgesamt geordnet. Die Karawane startet ausgeruht in den neuen Tag.
 
@@ -283,14 +283,14 @@ Das Wasser schwächt die Zugtiere eher, als dass es hilft. Der Tross verliert we
 
 # Schatten gegen die Sonne {#oede-weiterreise}
 
-Ihr marschiert ohne große Pause durch die drückende Stille. Die Männer flüstern nervös. In den schartigen Felsen, die den Pass säumen, scheinen sich die Schatten entgegen der Sonne zu bewegen. Ein tiefes, kehliges Knurren hallt von den Felswänden wider - verzerrt und unheilvoll.
+Ihr marschiert ohne große Pause durch die drückende Stille. Im Zug wird nervös geflüstert. In den schartigen Felsen, die den Pass säumen, scheinen sich die Schatten entgegen der Sonne zu bewegen. Ein tiefes, kehliges Knurren hallt von den Felswänden wider - verzerrt und unheilvoll.
 
 * [Waffen bereithalten und die Wachsamkeit schärfen](#das-biest)
-* [Den Schauer ignorieren und die Karawane vorwärts treiben](#das-biest)
+* [Den Schauer ignorieren und die Karawane vorwärtstreiben](#das-biest)
 
 # Das Biest {#das-biest}
 
-Plötzlich bricht eine schreckliche Bestie aus den Schatten hervor. Mit peitschenartigen Tentakeln auf dem Rücken und einer täuschenden Aura greift sie den Wagenzug an. Ihr werdet vollkommen überrascht - ein Kampf ist unvermeidbar.
+Wo die Ödnis sich zu einem Pass hebt, bricht zwischen den schartigen Felsen plötzlich eine schreckliche Bestie aus den Schatten hervor. Mit peitschenartigen Tentakeln auf dem Rücken und einer täuschenden Aura greift sie den Wagenzug an. Ihr werdet vollkommen überrascht - ein Kampf ist unvermeidbar.
 
 * [Den Kampf gegen das unheimliche Wesen aufnehmen](#kampf-biest)
 
@@ -300,7 +300,7 @@ Sie steht nie ganz dort, wo sie zu stehen scheint, und das merkst du erst am ers
 
 !combat schattenbestie
   win  -> biest-besiegt
-  flee [Dich zur Wagenburg zurückkämpfen](#biest-flucht) Du gibst den Pass auf und nimmst die Kutscher mit.
+  flee [Dich zu den Wägen zurückkämpfen](#biest-flucht) Du lässt die Bestie stehen und rennst zu den Wägen.
 
 # Die Bestie fällt {#biest-besiegt}
 
@@ -310,7 +310,7 @@ Mit einem letzten Hieb streckst du die unheimliche Bestie nieder. Die unmittelba
 
 # Mit knapper Not {#biest-flucht}
 
-Mit knapper Not gelingt es dir, der Bestie zu entkommen und dich zurück zur Wagenburg zu kämpfen.
+Mit knapper Not gelingt es dir, der Bestie zu entkommen und dich zu den Wägen zurückzukämpfen.
 
 * [Das Lager für die zweite Nacht aufschlagen](#tag-2-nacht)
 * [Hier könnt ihr nicht bleiben, es ist nicht sicher - sofort weiterziehen](#weiterziehen)
@@ -419,18 +419,18 @@ Der Frost sitzt dir mittlerweile im Rücken, und der Osten ist noch immer schwar
 Am dritten Tag steht der Wagenzug vor einer Weggabelung.
 
 { fatigue >= 1 }
-  Du siehst die beiden Wege durch einen Schleier aus zwei durchwachten Nächten. Deine Beine gehören dir nur noch teilweise, und jede der beiden Richtungen sieht nach demselben Elend aus.
+  Du siehst die beiden Wege durch einen Schleier aus Kälte und zu wenig Schlaf. Deine Beine gehören dir nur noch teilweise, und jede der beiden Richtungen sieht nach demselben Elend aus.
 { else }
   Du bist müde, aber klar im Kopf, und siehst den beiden Wegen an, welcher von ihnen wovon zu viel hat.
 
 Von den sieben Wägen rollen noch {waegen}, im Beutel klimpern {gold} Goldmünzen. Was in Graufurt daraus wird, rechnet Olric aus, nicht du.
 
 { ruf >= 1 }
-  Die Anführer der Karawane blicken dich fragend an, und sie tun es, als sei die Antwort verbindlich. Du hast dich als jemand gezeigt, der die Fracht abliefert.
+  Die Leute an der Spitze des Zuges blicken dich fragend an, und sie tun es, als sei die Antwort verbindlich. Es hat sich herumgesprochen, dass du dem Mann im Flickenmantel eine Abfuhr erteilt hast.
 { ruf <= -1 }
-  Die Anführer der Karawane blicken dich fragend an, aber einer von ihnen sieht dabei erst zu dir und dann zum zweiten Wagen. Jemand hat gestern nacht Stimmen gehört.
+  Die Leute an der Spitze des Zuges blicken dich fragend an, aber einer von ihnen sieht dabei erst zu dir und dann zu den Wägen. In der Schänke hat jemand gesehen, mit wem du am Tisch gesessen hast.
 { else }
-  Die Anführer der Karawane blicken dich fragend an. Sie kennen dich seit drei Tagen und haben sich noch keine Meinung gebildet.
+  Die Leute an der Spitze des Zuges blicken dich fragend an. Sie kennen dich seit drei Tagen und haben sich noch keine Meinung gebildet.
 
 Welchen Weg soll die Gruppe einschlagen?
 

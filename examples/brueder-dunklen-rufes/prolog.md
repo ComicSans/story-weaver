@@ -6,15 +6,15 @@ title: Prolog - Der Abend vor dem Aufbruch
 
 Willkommen in der "Zivilisation" - oder dem, was in diesem feuchten, bewaldeten Hinterland noch davon übrig ist. Du befindest dich inmitten einer namenlosen Ansammlung schiefer Häuser, die sich krampfhaft an einen schlammigen Weg klammern.
 
-Du bist kein Held in strahlender Rüstung. Helden sterben jung und arm. Du bist Pragmatiker. Du verdienst dir für gewöhnlich deinen Lebensunterhalt auf der falschen Seite des Gesetzes, du bist...
+Strahlende Rüstung ist nicht dein Stil. Wer den Helden spielt, stirbt jung und arm. Du denkst pragmatisch und verdienst dir deinen Lebensunterhalt für gewöhnlich auf der falschen Seite des Gesetzes, und zwar in der...
 
-* [Schurke - klassisch, traditionsbewusst, hinterhältig](#erstellung-schurke)
-* [Halunke - mit Hang zum Theatralischen und zu schmutzigen Tricks](#erstellung-halunke)
-* [Gauner - Spezialgebiet: unauffälliger taktischer Rückzug](#erstellung-gauner)
-* [Scharlatan - Verkäufer von heißer Luft und falschen Hoffnungen](#erstellung-scharlatan)
-* [Grabräuber - Umschüler mit Affinität zu allem, was glänzt](#erstellung-grabraeuber)
+* [Schurkerei - klassisch, traditionsbewusst, hinterhältig](#erstellung-schurke)
+* [Halunkerei - mit Hang zum Theatralischen und zu schmutzigen Tricks](#erstellung-halunke)
+* [Gaunerei - Spezialgebiet: unauffälliger taktischer Rückzug](#erstellung-gauner)
+* [Scharlatanerie - Verkauf von heißer Luft und falschen Hoffnungen](#erstellung-scharlatan)
+* [Grabräuberei - Quereinstieg mit Affinität zu allem, was glänzt](#erstellung-grabraeuber)
 
-# Schurke {#erstellung-schurke}
+# Schurkerei {#erstellung-schurke}
 
 ~ remember("SCHURKE")
 
@@ -22,7 +22,7 @@ Du bist kein Held in strahlender Rüstung. Helden sterben jung und arm. Du bist 
 
 -> auftraggeber
 
-# Halunke {#erstellung-halunke}
+# Halunkerei {#erstellung-halunke}
 
 ~ remember("HALUNKE")
 
@@ -30,7 +30,7 @@ Warum ehrlich kämpfen, wenn man auch Sand in die Augen werfen kann? Das ist Eff
 
 -> auftraggeber
 
-# Gauner {#erstellung-gauner}
+# Gaunerei {#erstellung-gauner}
 
 ~ remember("GAUNER")
 
@@ -38,7 +38,7 @@ Worte sind deine Waffen, und wenn die versagen, hast du immer noch sehr schnelle
 
 -> auftraggeber
 
-# Scharlatan {#erstellung-scharlatan}
+# Scharlatanerie {#erstellung-scharlatan}
 
 ~ remember("SCHARLATAN")
 
@@ -46,7 +46,7 @@ Du verkaufst den Leuten genau das, was sie hören wollen, und nimmst ihnen dafü
 
 -> auftraggeber
 
-# Grabräuber {#erstellung-grabraeuber}
+# Grabräuberei {#erstellung-grabraeuber}
 
 ~ remember("GRABRAEUBER")
 
@@ -123,20 +123,20 @@ Als du dich der Schänke wieder zuwendest, um nicht völlig durchnässt zu werde
 
 Der Schankraum ist mittlerweile gut gefüllt mit dubiosen Gestalten, die alle so aussehen, als hätten sie eine Rechnung mit dem Gesetz offen. Einiges los in diesem letzten Bollwerk der Zivilisation diesseits des Waldes. Du fragst dich, woher die Menschen kommen - auf dem Weg hierher hast du bestenfalls zehn Hütten gesehen.
 
-An deinem Tisch, auf dem Platz, der gerade noch leer war, sitzt jetzt ein Mann. Er ist gut in den Dreißigern, das Haar lichtet sich bereits, Dreitagebart, ungepflegt. Er trägt eine abenteuerlich zusammengestückelte Lederrüstung. An seiner Seite baumeln lässig ein Rapier und ein Messer - und er sieht aus, als wüsste er, wie man beides gleichzeitig benutzt. Über das Ganze hat er einen Flickenmantel geworfen, der in einem früheren Jahrzehnt vermutlich mal sehr edel war.
+An deinem Tisch sitzt jetzt ein Mann. Er ist gut in den Dreißigern, das Haar lichtet sich bereits, Dreitagebart, ungepflegt. Er trägt eine abenteuerlich zusammengestückelte Lederrüstung. An seiner Seite baumeln lässig ein Rapier und ein Messer - und er sieht aus, als wüsste er, wie man beides gleichzeitig benutzt. Über das Ganze hat er einen Flickenmantel geworfen, der in einem früheren Jahrzehnt vermutlich mal sehr edel war.
 
 "Die Spatzen pfeifen es von den undichten Dächern", sagt er mit einem strahlenden, beinahe unverschämt sympathischen Lächeln. "Du bist der Geleitschutz für den morgigen Wagenzug. Crighton ist mein Name."
 
 { knows("SCHURKE") }
-  Er mustert dich einen Augenblick. "Und ein Schurke von der alten Schule dazu. Man erkennt das an der Art, wie du den Rücken zur Wand setzt."
+  Er mustert dich einen Augenblick. "Und von der alten Schurkenschule dazu. Man erkennt das an der Art, wie du den Rücken zur Wand setzt."
 { knows("HALUNKE") }
-  Er mustert dich einen Augenblick. "Und ein Halunke dazu, wenn ich das richtig sehe. Du wirfst deinen Umhang, als hätte er Publikum."
+  Er mustert dich einen Augenblick. "Und mit Hang zur Halunkerei, wenn ich das richtig sehe. Du wirfst deinen Umhang, als hätte er Publikum."
 { knows("GAUNER") }
-  Er mustert dich einen Augenblick. "Und ein Gauner dazu. Du hast beim Hereinkommen zuerst nach der Hintertür gesehen, nicht nach dem Bier."
+  Er mustert dich einen Augenblick. "Und im Gaunerfach zu Hause. Du hast beim Hereinkommen zuerst nach der Hintertür gesehen, nicht nach dem Bier."
 { knows("SCHARLATAN") }
-  Er mustert dich einen Augenblick. "Und ein Scharlatan dazu. Keine Sorge, ich kaufe dir nichts ab, und du mir hoffentlich auch nicht."
+  Er mustert dich einen Augenblick. "Und in der Scharlatanerie bewandert. Keine Sorge, ich kaufe dir nichts ab, und du mir hoffentlich auch nicht."
 { knows("GRABRAEUBER") }
-  Er mustert dich einen Augenblick. "Und ein Grabräuber dazu. Deine Fingernägel erzählen von Erde, die niemand freiwillig anfasst."
+  Er mustert dich einen Augenblick. "Und mit der Grabräuberei vertraut. Deine Fingernägel erzählen von Erde, die niemand freiwillig anfasst."
 
 Er lehnt sich vor. "Ein ehrlicher Job, zweifellos. Aber unter uns Leuten vom Fach... warum sich für die paar Münzen von Olric abstrampeln?" Seine Stimme wird zu einem Flüstern. "Ich weiß aus sehr verlässlicher Quelle, dass auf einem der Wägen ein Artefakt geschmuggelt wird. Unschätzbar wertvoll. Wenn wir beide uns zusammentun, könnten wir auf der Reise eine kleine... Umverteilung des Reichtums vornehmen. Was meinst du?"
 
@@ -151,7 +151,7 @@ Du spürst auf etliche Schritte Entfernung, dass dieser Kerl nach unbezahlter Ar
 
 Crighton blickt dir einen Moment lang überrascht hinterher, schmunzelt dann amüsiert, zuckt mit den Schultern und wendet sich dem nächsten Würfelspiel am Nebentisch zu.
 
-Du verbringst den Rest des Abends unauffällig im Schatten, meidest weiteren Blickkontakt und legst dich schließlich früh schlafen. Du hast das Gefühl, ein gutes Angebot verpasst zu haben - aber der Wald ist groß, und man sieht sich auf den engen Wegen meist öfter, als einem lieb ist.
+Du verbringst den Rest des Abends unauffällig im Schatten, meidest weiteren Blickkontakt und legst dich schließlich schlafen. Du hast das Gefühl, ein gutes Angebot verpasst zu haben - aber der Wald ist groß, und man sieht sich auf den engen Wegen meist öfter, als einem lieb ist.
 
 -> reise-start
 
@@ -261,9 +261,9 @@ Du schlüpfst hinein - nur um festzustellen, dass im dunklen Flur zwei riesige, 
 
 Der nächste Morgen ist genau so grausam, wie du ihn dir vorgestellt hast. Der Nebel ist so dick, dass man ihn in Scheiben schneiden und als Baumaterial verkaufen könnte.
 
-Die zehn Kutscher und Maultiertreiber brüllen heiser durcheinander, während sie die Zugtiere vor die sieben schweren Wagen spannen. Die Holzräder knarren bedrohlich, als sich der Zug endlich, viel zu spät, in Bewegung setzt.
+Die zehn Kutscher und Maultiertreiber brüllen heiser durcheinander, während sie die Zugtiere vor die sieben schweren Wägen spannen. Die Holzräder knarren bedrohlich, als sich der Zug endlich, viel zu spät, in Bewegung setzt.
 
-Du reihst dich ein. Vor euch liegt der Wald. Dicht. Dunkel. Und wenn die Gerüchte stimmen, ziemlich tödlich.
+Du reihst dich ein. Irgendwo da draußen liegt der Wald. Dicht. Dunkel. Und wenn die Gerüchte stimmen, ziemlich tödlich.
 
 Das Abenteuer hat begonnen.
 
