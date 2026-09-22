@@ -549,6 +549,14 @@ paragraph that is only a space, and inside one that does have something to
 say, a run of spaces counts as one and none of them sits at an edge. A host
 does not have to sieve, and one that does hides the day the rule breaks.
 
+**One space after the colon is formatting.** `{has("lantern"): The light
+reaches far.|…}` drops it, and so does `"{polite: Please|So}."`. When the brace
+sits right against a word, the space belongs to the sentence instead:
+`My voice shakes{angry: with anger|; I am not used to guns}.` keeps it, as ink
+does, so the arm does not glue onto the word. An arm that opens with
+punctuation that belongs to the word before, `fashion{c: , and so on}`, drops
+it again.
+
 **A colon does not always mean a condition.** Prose is full of colons ("In the log
 book: the last entry breaks off"), and a sequence must be able to carry one. The text before the first colon outside quotes is a condition when
 one of these holds:
@@ -1945,6 +1953,7 @@ edges.
 | 20 to 23    | Export, hosts, the runtime API and the host protocol moved to `HOSTS.md`. An author needs none of them, and two hosts are built against them, so they have a document of their own. The open points went with them. What sections 22 said about L021, L025, L028 and L029 that was a rule rather than a reason now stands in 19. |
 | 6, 15       | `turns_since()` removed. It never returned turns since anything: the save records which nodes have been seen, not when, so the call answered with the total turn count or `-1`. An event on `counter: 'turns()'`, or a variable the book sets itself, does what it promised. |
 | 23          | Images, L025, the catch-up mode and the new-edition question leave the open points; what stays of 23.4 is what an alt text owes a map. |
+| 5.6         | The space after a condition's colon stays when the brace sits against a word and the arm does not open with punctuation: `shakes{angry: with anger}` read "shakeswith anger" before, in four lines of the imported Intercept. |
 | 5.7         | A blank line ends a chain of `{ }` headers, so two blocks meant to stand on their own no longer swallow each other; `{ else }` stays with the chain above it. Before, a first true header silenced every block below it down to the next line that was not a header. |
 | 4.3, 15, 17.1 | Choice and alternative ids carry the namespace in a multi-file book: `crypt.chamber:c0`, not `chamber:c0`. Two chapters with a node of the same name shared one count before, so a once-only choice taken in one vanished from the other. In a multi-file book a save from before offers its once-only choices again and starts its sequences, cycles and once-only alternatives over, because `taken`, `alts` and `picks` are keyed by these ids; every other field carries over. |
 

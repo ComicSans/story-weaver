@@ -67,6 +67,19 @@ test('a paragraph runs to the next blank line', () => {
   assert.deepEqual(ops[1].parts, ['Ein zweiter Absatz.']);
 });
 
+test('the space after a colon stays when the brace sits against a word', () => {
+  // ink keeps it, and the imported Intercept depends on that: "My voice
+  // shakes{forceful > 0: with anger|; ...}" read "shakeswith anger".
+  const cond = (line) => firstBody(`# A {#a}\n\n${line}\n-> END\n`)[0].parts.find((p) => p.t === 'cond');
+  assert.deepEqual(cond('Er zittert{gold > 0: vor Wut|; still}.').then, [' vor Wut']);
+  assert.deepEqual(cond('Er zittert{gold > 0: vor Wut|; still}.').else, ['; still']);
+  // Against a word, but the arm opens with punctuation of its own.
+  assert.deepEqual(cond('So{gold > 0: , und mehr}.').then, [', und mehr']);
+  // Not against a word: the space is only formatting.
+  assert.deepEqual(cond('"{gold > 0: Bitte|Also}."').then, ['Bitte']);
+  assert.deepEqual(cond('Er sagt {gold > 0: ja|nein}.').then, ['ja']);
+});
+
 test('a trailing class is lifted off the text', () => {
   const ops = firstBody('# A {#a}\n\nThe letter. {.letter}\n-> END\n');
   assert.equal(ops[0].class, 'letter');

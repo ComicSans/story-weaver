@@ -344,7 +344,7 @@ export function parseInline(text, at, state) {
     }
 
     flush();
-    parts.push(inlinePart(inner, at, state));
+    parts.push(inlinePart(inner, at, state, text[i - inner.length - 3] ?? ''));
   }
   flush();
 
@@ -356,7 +356,7 @@ export function parseInline(text, at, state) {
   };
 }
 
-function inlinePart(inner, at, state) {
+function inlinePart(inner, at, state, before = '') {
   const id = () => `${state.prefix ?? state.node.id}:a${state.counter++}`;
 
   const kinds = { '&': 'cycle', '!': 'once', '~': 'random' };
@@ -374,11 +374,11 @@ function inlinePart(inner, at, state) {
       if (!state.catalog) {
         throw new CompileError('E130', '"?" as a condition is only allowed in a translation', at);
       }
-      const placeholder = splitAlternatives(condBody(inner, colon), at, state);
+      const placeholder = splitAlternatives(condBody(inner, colon, before), at, state);
       return { t: 'cond', when: null, then: placeholder[0] ?? [], else: placeholder[1] ?? [] };
     }
     const when = parseExpression(head, at);
-    const arms = splitAlternatives(condBody(inner, colon), at, state);
+    const arms = splitAlternatives(condBody(inner, colon, before), at, state);
     const cond = { t: 'cond', when, then: arms[0] ?? [], else: arms[1] ?? [] };
     // Only a head of bare names is still open; anything with an operator or a
     // call was meant as a condition and stays one, right or wrong.
@@ -440,8 +440,19 @@ export function namesIn(expr) {
 }
 
 /** The arms of a conditional, without the space that follows the colon. */
-function condBody(inner, colon) {
-  return inner.slice(colon + 1).replace(/^ /, '');
+/**
+ * The text after a condition's colon. One space there is formatting and
+ * goes, unless the brace sits right against a word: then it is the space
+ * between that word and the arm, as in ink, and `shakes{angry: with anger}`
+ * must not read "shakeswith anger". An arm that opens with punctuation
+ * belonging to the word before (`fashion{c: , and so}`) still loses it
+ * (SPEC 5.6).
+ */
+function condBody(inner, colon, before = '') {
+  const body = inner.slice(colon + 1);
+  const againstWord = /[\p{L}\p{N}]/u.test(before);
+  if (againstWord && /^ [^\s,.;:!?)]/.test(body)) return body;
+  return body.replace(/^ /, '');
 }
 
 function splitAlternatives(text, at, state) {
