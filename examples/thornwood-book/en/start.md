@@ -1,6 +1,6 @@
 # At the Forest Edge {#begin}
 
-The path forks before a thorn hedge; to your right you hear the gurgle of a small brook. {&A crack|A crunch|Silence} in the undergrowth.
+The path forks before a thorn hedge; to your right you hear the gurgle of a small brook. Beneath the hedge the ground drops away into a dark gap. {&A crack|A crunch|Silence} in the undergrowth.
 
 You carry {gold} gold pieces and a luck of {luck}.
 
@@ -14,7 +14,7 @@ You squeeze in, lantern first.
 
 {!Thorns rake across your arms.|You know the way through the thorns by now.}
 
-Only thorns. But from here you can see the ground give way beneath the thorn hedge: there is a gap, and it runs deeper than a hedge has any need for.
+Only thorns. But from here you can see how far down the gap beneath the thorn hedge goes: deeper than a hedge has any need for.
 
 * Walk on, towards the brook
 * Go back to the hedge

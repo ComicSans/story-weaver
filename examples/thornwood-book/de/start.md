@@ -1,6 +1,6 @@
 # Am Waldrand {#begin}
 
-Der Pfad teilt sich vor einer Weißdornhecke, rechts von dir hörst du das Gluckern eines kleinen Bachs. {&Ein Krachen|Ein Knirschen|Stille} im Unterholz.
+Der Pfad teilt sich vor einer Weißdornhecke, rechts von dir hörst du das Gluckern eines kleinen Bachs. Unter der Hecke sackt der Boden zu einem dunklen Spalt ab. {&Ein Krachen|Ein Knirschen|Stille} im Unterholz.
 
 Du hast {gold} Goldstücke bei dir und ein Glück von {luck}.
 
@@ -12,7 +12,7 @@ Du hast {gold} Goldstücke bei dir und ein Glück von {luck}.
 
 {!Dornen fahren dir über die Arme.|Du kennst den Weg durch die Dornen inzwischen.}
 
-Nur Dornen. Aber von hier aus siehst du, dass unter der Weißdornhecke der Boden absackt: Da ist ein Spalt, und er ist tiefer, als eine Hecke ihn braucht.
+Nur Dornen. Aber von hier aus siehst du, wie tief der Spalt unter der Weißdornhecke hinabreicht: tiefer, als eine Hecke ihn braucht.
 
 + [Weiter, Richtung Bach](#brook)
 + [Zur Hecke zurückgehen](#begin)
