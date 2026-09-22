@@ -3,7 +3,7 @@ blurb:
   de: "Ein Abend, eine Sandbank, ein Turm: Wenn der Sturm kommt, muss die große Lampe brennen. Ein Spielbuch gegen die Uhr."
   en: "One evening, a sandbar, a tower: when the storm comes, the great lamp must be burning. A gamebook against the clock."
 author: inkle-md
-version: 0.3.0
+version: 0.4.0
 start: turm.ankunft
 
 languages:

@@ -3,7 +3,7 @@ blurb:
   de: "Die Kestrel ist auf der Nachtseite eines fremden Planeten niedergegangen, und die Luft wird knapp. Ein Spielbuch über Atem, Zweifel und die Frage, wer hier eigentlich mit dir spricht."
   en: "The Kestrel came down on the nightside of a foreign planet, and air is running low. A gamebook about breath, doubt, and the question of who is actually talking to you."
 author: Story Weaver
-version: 0.1.0
+version: 0.2.0
 start: crash.wake
 
 languages:
