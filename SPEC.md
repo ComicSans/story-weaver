@@ -283,9 +283,10 @@ produce a second dot.
 
 In a multi-file project the qualified form is used everywhere an id appears
 outside its own file: diverts, choice links (`[Go down](#crypt.chamber)`),
-`visits()`, `goto:` and `start:` in `book.yaml`, and the
-`node`, `visits` and `seen` fields of a save. A single-file book keeps all of
-these bare, per 4.1.
+`visits()`, `goto:` and `start:` in `book.yaml`, the
+`node`, `visits` and `seen` fields of a save, and the ids of choices and
+alternatives (17.1) that `taken`, `alts` and `picks` are keyed by. A
+single-file book keeps all of these bare, per 4.1.
 
 Namespaces do not nest. A path has at most one dot. If a book ever outgrows
 that, the answer is a longer `as:` alias, not a second level.
@@ -1559,9 +1560,9 @@ string here where section 14 declared a `silver-key` item (7.1 allows both):
   "memory": ["KRAKEN"],
   "visits": { "crypt.crypt": 2, "forest.clearing": 1 },
   "lang": "de",
-  "taken": { "chamber:c0": 1 },
-  "alts": { "crypt:a0": 2 },
-  "picks": { "crypt:a0": 1 },
+  "taken": { "crypt.chamber:c0": 1 },
+  "alts": { "crypt.crypt:a0": 2 },
+  "picks": { "crypt.crypt:a0": 1 },
   "visible": [0, 1],
   "screen": [{ "node": "crypt.chamber", "at": [0], "class": null }],
   "fight": null,
@@ -1665,12 +1666,12 @@ The compiler turns your Markdown into a single JSON file. The design goal is tha
       "body": [
         { "op": "text", "parts": ["A silver key lies on the sarcophagus."] },
         { "op": "choices", "items": [
-          { "id": "chamber:c0", "label": ["Take the key"],
+          { "id": "crypt.chamber:c0", "label": ["Take the key"],
             "body": [
               { "op": "text", "parts": ["Something sighs in the dark."] },
               { "op": "call", "fn": "take", "args": [{ "lit": "silver key" }], "line": 44 }
             ] },
-          { "id": "chamber:c1", "sticky": true, "label": ["Back to the light"],
+          { "id": "crypt.chamber:c1", "sticky": true, "label": ["Back to the light"],
             "target": "start.begin" }
         ] },
         { "op": "divert", "target": "start.begin" }
@@ -1703,7 +1704,7 @@ The ops you will meet are `text`, `image`, `choices`, `branch`, `divert`, `comba
 
 There is no op for weave, and that is on purpose. A run of choices at one depth is one `choices` op, and whatever follows it in the same container is the gather. A choice with `"target": null` runs its own body and then falls through to exactly that.
 
-Anything the runtime has to remember carries an id, which is what ties this format to the save format. Choices are named `node:c<n>`, alternatives `node:a<n>`. That is what `taken` and `alts` in the save are keyed by.
+Anything the runtime has to remember carries an id, which is what ties this format to the save format. Choices are named `node:c<n>`, alternatives `node:a<n>`, with `node` in the qualified form of 4.3 in a multi-file book. That is what `taken` and `alts` in the save are keyed by, and the reason for the namespace: two chapters that each have a `depart` would otherwise share one count, and a once-only choice taken in one would vanish from the other.
 
 The combat lines of `strings:` are parts like any other text, one list per language, and their alternatives carry ids too. Those ids begin with `@`, which no node name can, so a book-wide line is `@strings:combat.hit:a0` and one an enemy writes is `@enemy:cave-troll:combat.taken:a0`. An enemy that writes none keeps no `strings` key at all, and a line that is a single run of text is a single string, by the fourth rule above.
 
@@ -1938,6 +1939,7 @@ edges.
 | 20 to 23    | Export, hosts, the runtime API and the host protocol moved to `HOSTS.md`. An author needs none of them, and two hosts are built against them, so they have a document of their own. The open points went with them. What sections 22 said about L021, L025, L028 and L029 that was a rule rather than a reason now stands in 19. |
 | 6, 15       | `turns_since()` removed. It never returned turns since anything: the save records which nodes have been seen, not when, so the call answered with the total turn count or `-1`. An event on `counter: 'turns()'`, or a variable the book sets itself, does what it promised. |
 | 23          | Images, L025, the catch-up mode and the new-edition question leave the open points; what stays of 23.4 is what an alt text owes a map. |
+| 4.3, 15, 17.1 | Choice and alternative ids carry the namespace in a multi-file book: `crypt.chamber:c0`, not `chamber:c0`. Two chapters with a node of the same name shared one count before, so a once-only choice taken in one vanished from the other. A save from before keeps its other fields, and its once-only choices of a multi-file book are offered again. |
 
 ### 0.6 to 0.7
 

@@ -48,7 +48,11 @@ export function parseStory(body, ctx) {
     i++;
     const start = i;
     while (i < lines.length && lines[i].kind !== 'heading' && lines[i].kind !== 'function') i++;
-    const state = { counter: 0, node };
+    // Choice and alternative ids carry the namespace, as a node id does
+    // outside its file (SPEC 4.3): two chapters may each have a `depart`,
+    // and a once-only choice in one must not vanish from the other.
+    const prefix = ctx.namespace ? `${ctx.namespace}.${node.id}` : node.id;
+    const state = { counter: 0, node, prefix };
     node.body = parseContainer(lines.slice(start, i), 0, state);
     nodes.push(node);
   }
@@ -195,7 +199,7 @@ function parseChoice(lines, i, depth, state) {
   const [, marker, condition, label, target, rest] = m;
 
   const item = {
-    id: `${state.node.id}:c${state.counter++}`,
+    id: `${state.prefix ?? state.node.id}:c${state.counter++}`,
     sticky: marker === '+',
     label: parseInline(label, cur, state).parts,
     when: condition ? parseExpression(condition, cur) : null,
@@ -349,7 +353,7 @@ export function parseInline(text, at, state) {
 }
 
 function inlinePart(inner, at, state) {
-  const id = () => `${state.node.id}:a${state.counter++}`;
+  const id = () => `${state.prefix ?? state.node.id}:a${state.counter++}`;
 
   const kinds = { '&': 'cycle', '!': 'once', '~': 'random' };
   const lead = kinds[inner[0]];

@@ -435,6 +435,12 @@ test('the nightside runs its clock down over three hundred playthroughs', () => 
   // that dropped a guard would play a different book.
   for (const lang of ['de', 'en']) {
     const ends = new Set();
+    // The reader of `simulate --coverage`, steered towards what no run has
+    // taken yet. Staying in the basin is one choice on one page behind the
+    // filter; an unsteered walker found it only while once-only choices of
+    // the four `depart` nodes still shared an id and funnelled every run
+    // through the same exits.
+    const gesehen = { angeboten: new Set(), genommen: new Map() };
 
     for (let seed = 1; seed <= 300; seed++) {
       const s = new Story(story, { seed, lang });
@@ -443,7 +449,7 @@ test('the nightside runs its clock down over three hundred playthroughs', () => 
       // More steps than the house needs: the filter in the basin holds the
       // clock up, and a spare cartridge fitted at the last exit buys the way
       // back in - a reader who keeps wandering takes longer to run out.
-      const run = walk(s, { seed, maxSteps: 600 });
+      const run = walk(s, { seed, maxSteps: 600, gesehen });
       assert.ok(!run.deadEnd, `dead end at ${s.current.node} (seed ${seed}, ${lang})`);
       assert.ok(run.ended, `seed ${seed} never finished (${lang})`);
       ends.add(s.current.node);

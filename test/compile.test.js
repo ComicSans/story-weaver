@@ -11,6 +11,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
 import { compileSources, compileFile } from '../src/compile.js';
+import { Story } from '../src/runtime.js';
 import { compile, expectError, nodesOf } from './helpers.js';
 
 const here = dirname(fileURLToPath(import.meta.url));
@@ -110,6 +111,26 @@ test('a multi-file project namespaces its nodes and resolves across files', () =
 
   assert.deepEqual(Object.keys(nodesOf(story)), ['start.begin', 'crypt.chamber']);
   assert.equal(nodesOf(story)['start.begin'].body[0].target, 'crypt.chamber');
+});
+
+test('two chapters with a node of the same name do not share a once-only choice', () => {
+  // Choice ids were `depart:c0` in every chapter that had a `depart`, so the
+  // runtime counted them as one choice: taken in one chapter, gone from the
+  // other. nightside has four such nodes and lost its way back to the crash
+  // site that way.
+  const { story } = compileSources([
+    { file: 'a.md', namespace: 'a', source: '---\ntitle: T\n---\n\n# X {#x}\n\n* [A](#b.x)\n+ [Stay](#x)\n' },
+    { file: 'b.md', namespace: 'b', source: '# X {#x}\n\n{!Once.|Again.}\n\n* [B](#a.x)\n+ [Stay](#x)\n' },
+  ], { entry: 'book.yaml', book: { title: 'T', start: 'a.x' } });
+  const choiceIds = (id) => nodesOf(story)[id].body.find((op) => op.op === 'choices').items.map((c) => c.id);
+  assert.deepEqual(choiceIds('a.x'), ['a.x:c0', 'a.x:c1']);
+  assert.deepEqual(choiceIds('b.x'), ['b.x:c1', 'b.x:c2']);
+  assert.equal(nodesOf(story)['b.x'].body[0].parts[0].id, 'b.x:a0');
+
+  const s = new Story(story, { seed: 1 });
+  s.choose(s.current.choices.find((c) => c.label === 'A').index);
+  assert.equal(s.current.node, 'b.x');
+  assert.deepEqual(s.current.choices.map((c) => c.label), ['B', 'Stay']);
 });
 
 test('the blurb is the back of the book and travels in meta', () => {
