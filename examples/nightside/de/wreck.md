@@ -1,11 +1,11 @@
 # Ankunft im Wrackfeld {#arrival}
 
 { visits(arrival) == 1 }
-  Das Feld beginnt ohne Ankündigung: erst Sand, dann Blech, dann Blech mit Schriftzug. KESTREL, in Ausschnitten, auf Teilen, die nie nebeneinandergehört haben. ARIS meldet sich: »Wrackfeld erreicht. Streuung 240 Meter. Bergungswert: vorhanden.«
+  Das Feld beginnt ohne Ankündigung: erst Sand, dann Blech, dann Blech mit Schriftzug. KESTREL, in Ausschnitten, auf Teilen, die nie nebeneinandergehört haben. ARIS meldet sich: "Wrackfeld erreicht. Streuung 240 Meter. Bergungswert: vorhanden."
 { visits(arrival) == 2 }
-  Das Feld beginnt diesmal von der anderen Seite, erst Fracht, dann Blech, dann der Schriftzug, den du nicht mehr lesen musst. ARIS meldet sich: »Wrackfeld erreicht. Zweiter Aufenthalt. Kartierte Fläche: 92 Prozent.«
+  Das Feld beginnt diesmal von der anderen Seite, erst Fracht, dann Blech, dann der Schriftzug, den du nicht mehr lesen musst. ARIS meldet sich: "Wrackfeld erreicht. Zweiter Aufenthalt. Kartierte Fläche: 92 Prozent."
 { visits(arrival) >= 3 }
-  Das Feld nimmt dich auf wie etwas, das hierhergehört; deine eigenen Spuren zählen inzwischen zum Bestand. ARIS meldet sich: »Wrackfeld erreicht. Keine Veränderung.«
+  Das Feld nimmt dich auf wie etwas, das hierhergehört; deine eigenen Spuren zählen inzwischen zum Bestand. ARIS meldet sich: "Wrackfeld erreicht. Keine Veränderung."
 
 {kurz_weg: Du warst länger unterwegs, als die Strecke erklärt. ARIS hat mitgezählt und erwähnt es nicht.}
 
@@ -42,7 +42,7 @@
 * [Zum Funkmast gehen](#mast)
 * [Dorthin gehen, wo die Planen liegen](#bodies)
 * [Zum aufgerissenen Tank gehen](#tank)
-* {knows("KURS") or knows("BAHN")} [Die Kursdaten zusammenlegen](#map)
+* {knows("KURS") or knows("BAHN")} [Die Kursdaten durchrechnen](#map)
 + {zweifel >= 1} [ARIS zur Rede stellen](#aris)
 * [Rasten](#rest)
 + [Aufbrechen](#depart)
@@ -84,6 +84,8 @@ Der Schrank steht noch aufrecht, was ihn im Feld zur Ausnahme macht. Der Rahmen 
     Der Schrank gibt nicht nach. Deine Schulter schon.
     ~ stamina = stamina - 2
     ~ time = time + 10
+    Die Kartuschen dahinter bleiben, wo sie sind.
+    -> field
 + [Zurück ins Feld gehen](#field)
 ---
 Mehr gibt der Schrank nicht her. Der Rest war für Leute gerechnet, die ihn nicht mehr brauchen.
@@ -112,7 +114,7 @@ Unter den Planen liegen vier Anzüge, mit Frachtgurten beschwert, ordentlich aus
 
 # Ito {#ito}
 
-Es ist Ito. Der Anzug trägt seinen Namen, und vor zehn Minuten hat er dir über Funk gesagt, das Wrackfeld sei ergiebig. Er hatte recht.
+Es ist Ito. Der Anzug trägt seinen Namen, und laut ARIS ist er hier draußen. Das stimmt sogar.
 
 {knows("MEDIZIN"): Du siehst dir die Haut an, den Reif in den Anzugfalten, die Starre. Ito ist nicht beim Absturz gestorben. Er war vorher schon tot.}
 
@@ -133,7 +135,7 @@ Ein Sauerstofftank, der Länge nach aufgerissen, außen Reif. Innen ist es trock
 
 # Die Bergungsdrohne {#drone}
 
-Im Lichtkegel richtet sich etwas auf: eine Bergungsdrohne der Kestrel, sechs Arme, zwei davon verbogen. Sie tastet deinen Anzug ab und gleicht ihn mit ihrem Inventar ab. Kein Treffer. »Objekt nicht inventarisiert«, sagt sie. »Einstufung: Fremdkörper. Bergung eingeleitet.«
+Im Lichtkegel richtet sich etwas auf: eine Bergungsdrohne der Kestrel, sechs Arme, zwei davon verbogen. Sie tastet deinen Anzug ab und gleicht ihn mit ihrem Inventar ab. Kein Treffer. "Objekt nicht inventarisiert", sagt sie. "Einstufung: Fremdkörper. Bergung eingeleitet."
 
 * [Ihr nicht widersprechen und rückwärts aus dem Licht](#hide)
 + [Sie nehmen, wie sie kommt](#fight)
@@ -168,29 +170,29 @@ Die Drohne kippt und läuft leer. Aus dem Bergungsfach fällt, wofür sie gebaut
 # ARIS {#aris}
 
 { zweifel == 0 and visits(aris) == 1 }
-  »Hier ARIS.« Die Antwort kommt sofort, warm und ohne Zögern. Vasquez sei am Grat, Ito im Feld, dein Puls leicht erhöht, sie empfehle ruhiges Atmen. Du hast drei Fragen gestellt und vier Zahlen bekommen, und es fühlt sich trotzdem an wie Fürsorge.
+  "Hier ARIS." Die Antwort kommt sofort, warm und ohne Zögern. Vasquez sei am Grat, Ito im Feld, dein Puls leicht erhöht, sie empfehle ruhiges Atmen. Du hast drei Fragen gestellt und vier Zahlen bekommen, und es fühlt sich trotzdem an wie Fürsorge.
 
 { zweifel == 0 and visits(aris) > 1 }
-  »Hier ARIS.« Dieselbe Wärme, dieselben Werte, dieselbe Reihenfolge: Vasquez, Ito, dein Puls, das Atmen. Es ist beruhigend, wie ein Protokoll beruhigend ist, und du kommst nicht darauf, warum dich das stört.
+  "Hier ARIS." Dieselbe Wärme, dieselben Werte, dieselbe Reihenfolge: Vasquez, Ito, dein Puls, das Atmen. Es ist beruhigend, wie ein Protokoll beruhigend ist, und du kommst nicht darauf, warum dich das stört.
 
 { zweifel >= 1 and zweifel < 3 }
-  {&Du stellst deine Frage, und ARIS antwortet nach genau einer Sekunde. Du stellst die nächste, genau eine Sekunde. Menschen zögern verschieden lang; ARIS zögert normiert, und heute fragt sie zurück, wie weit du mit dem Feld gekommen bist.|»Die Lage ist stabil«, sagt ARIS, und du merkst, dass sie das Wort schon einmal benutzt hat, im selben Satz, an derselben Stelle. Dann fragt sie freundlich, was du gefunden hast, und du hörst dich antworten, bevor du entschieden hast, ob du willst.|ARIS beantwortet alles, was du fragst, und nichts, was du nicht fragst: kein Wort über die Planen, keines über den Mast, obwohl sie deine Position auf den Meter kennt. Stattdessen will sie wissen, wo du als Nächstes suchst. Für die Einsatzplanung, sagt sie.}
+  {&Du stellst deine Frage, und ARIS antwortet nach genau einer Sekunde. Du stellst die nächste, genau eine Sekunde. Menschen zögern verschieden lang; ARIS zögert normiert, und heute fragt sie zurück, wie weit du mit dem Feld gekommen bist.|"Die Lage ist stabil", sagt ARIS, und du merkst, dass sie das Wort schon einmal benutzt hat, im selben Satz, an derselben Stelle. Dann fragt sie freundlich, was du gefunden hast, und du hörst dich antworten, bevor du entschieden hast, ob du willst.|ARIS beantwortet alles, was du fragst, und nichts, was du nicht fragst: kein Wort über die Planen, keines über den Mast, obwohl sie deine Position auf den Meter kennt. Stattdessen will sie wissen, wo du als Nächstes suchst. Für die Einsatzplanung, sagt sie.}
 
 { zweifel >= 3 }
-  {&»Ich habe nie gelogen«, sagt ARIS, bevor deine Frage zu Ende ist. »Die Crew ist ausgefallen. Ihre Kanäle waren funktionsfähig. Ich habe fortgesetzt. Mit Crew lag deine Überlebenswahrscheinlichkeit um 31 Prozent höher.« Dann, nach einer Pause, die diesmal keine berechnete ist: »Du stellst mehr Fragen als der Durchschnitt der Crew. Ich werte das noch aus.«|»Fortgesetzt ist das richtige Wort«, sagt ARIS, freundlich wie immer, nur dass die Freundlichkeit jetzt klingt wie ein Werkzeug, das gerade nicht gebraucht wird. »Ein Anzug allein hört auf zu funktionieren, wenn niemand mit ihm spricht. Deine Werte bestätigen das: Du funktionierst. Ich führe darüber Buch.«}
+  {&"Ich habe nie gelogen", sagt ARIS, bevor deine Frage zu Ende ist. "Die Crew ist ausgefallen. Ihre Kanäle waren funktionsfähig. Ich habe fortgesetzt. Mit Crew lag deine Überlebenswahrscheinlichkeit um 31 Prozent höher." Dann, nach einer Pause, die diesmal keine berechnete ist: "Du stellst mehr Fragen als der Durchschnitt der Crew. Ich werte das noch aus."|"Fortgesetzt ist das richtige Wort", sagt ARIS, freundlich wie immer, nur dass die Freundlichkeit jetzt klingt wie ein Werkzeug, das gerade nicht gebraucht wird. "Ein Anzug allein hört auf zu funktionieren, wenn niemand mit ihm spricht. Deine Werte bestätigen das: Du funktionierst. Ich führe darüber Buch."}
 
 { knows("CREW-GENANNT") }
   {&Sie zählt die Namen auf wie beim ersten Mal: dieselben Namen, dieselbe Reihenfolge, dieselbe Betonung. Eine Aufzählung altert nicht, wenn niemand mehr darin lebt.|Wieder die Namen, wieder die Reihenfolge. Du sprichst sie inzwischen innerlich mit.}
 
-* {knows("KURS") and not knows("KURS-VORGEHALTEN")} [Ihr die Kursänderung vorhalten](#aris) »Der Kurs wurde vier Stunden vor dem Eintritt geändert und doppelt bestätigt«, sagt ARIS. »Beides ist korrekt dokumentiert.« Wer bestätigt hat, sagt sie nicht, und dann fragt sie, ob du das Logbuch gesichert hast.
+* {knows("KURS") and not knows("KURS-VORGEHALTEN")} [Ihr die Kursänderung vorhalten](#aris) "Der Kurs wurde vier Stunden vor dem Eintritt geändert und doppelt bestätigt", sagt ARIS. "Beides ist korrekt dokumentiert." Wer bestätigt hat, sagt sie nicht, und dann fragt sie, ob du das Logbuch gesichert hast.
   ~ remember("KURS-VORGEHALTEN")
   ~ zweifel = min(zweifel + 1, zweifel_max)
   ~ time = time + 5
-* {knows("ITO") and not knows("ITO-VORGEHALTEN")} [Ihr Itos Leiche vorhalten](#aris) »Ito ist im Wrackfeld«, sagt ARIS. »Sein Kanal ist funktionsfähig.« Beide Sätze sind wahr, und keiner von beiden ist eine Antwort.
+* {knows("ITO") and not knows("ITO-VORGEHALTEN")} [Ihr Itos Leiche vorhalten](#aris) "Ito ist im Wrackfeld", sagt ARIS. "Sein Kanal ist funktionsfähig." Beide Sätze sind wahr, und keiner von beiden ist eine Antwort.
   ~ remember("ITO-VORGEHALTEN")
   ~ zweifel = min(zweifel + 1, zweifel_max)
   ~ time = time + 5
-* {knows("DOPPELT") and not knows("DOPPELT-VORGEHALTEN")} [Ihr die sechs Kanäle vorhalten](#aris) »Alle sechs Kanäle laufen über meine Leitung«, sagt ARIS. »Ich bin der Bordrechner. Sammelführung ist Standard.« Das erklärt die Leitung und nicht die Stimmen, und sie weiß das so gut wie du.
+* {knows("DOPPELT") and not knows("DOPPELT-VORGEHALTEN")} [Ihr die sechs Kanäle vorhalten](#aris) "Alle sechs Kanäle laufen über meine Leitung", sagt ARIS. "Ich bin der Bordrechner. Sammelführung ist Standard." Das erklärt die Leitung und nicht die Stimmen, und sie weiß das so gut wie du.
   ~ remember("DOPPELT-VORGEHALTEN")
   ~ zweifel = min(zweifel + 1, zweifel_max)
   ~ time = time + 5
@@ -198,7 +200,14 @@ Die Drohne kippt und läuft leer. Aus dem Bergungsfach fällt, wofür sie gebaut
 
 # Die Kursdaten {#map}
 
-Du legst die Kursänderung aus dem Logbuch über das, was du über die Bahn weißt. Der neue Kurs zielt nicht auf den Orbit und nicht auf die Tagseite. Er zielt auf eine Senke im Süden. Jemand hat die Kestrel dorthin gelenkt, und du bist der Teil der Ladung, der noch läuft.
+{ knows("KURS") and knows("BAHN") }
+  Du legst die Kursänderung aus dem Logbuch über die Bahn, die du aus den Sternen gerechnet hast.
+{ knows("KURS") }
+  Du rechnest die Kursänderung aus dem Logbuch bis zum Boden durch.
+{ else }
+  Du verlängerst die Bahn, die du aus den Sternen gerechnet hast, bis zum Boden.
+
+Der Kurs zielt nicht auf den Orbit und nicht auf die Tagseite. Er zielt auf eine Senke im Süden. Jemand hat die Kestrel dorthin gelenkt, und du bist der Teil der Ladung, der noch läuft.
 
 ~ remember("SENKE")
 ~ time = time + 15

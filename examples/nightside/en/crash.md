@@ -22,7 +22,7 @@ Then something clicks, and the channel is open.
 
 # The First Call {#voice}
 
-"ARIS here," says a voice you know. The ship's computer. "I am receiving your vitals. Pulse 96, falling. Good." A pause. "Vasquez is on the ridge, Ito is in the debris field. Channel three will report in four minutes." The voice sounds the way it always has: calm, precise, with a fondness for numbers nobody ordered.
+"ARIS here," says a voice you know. The ship's computer. "I am receiving your vitals. Pulse 96, falling. Good." A pause. "Vasquez is on the ridge, Ito is in the wreck field. Channel three will report in four minutes." The voice sounds the way it always has: calm, precise, with a fondness for numbers nobody ordered.
 
 * [Ask about the crew](#crew)
 * [Check the suit](#suit)
@@ -31,7 +31,7 @@ Then something clicks, and the channel is open.
 
 # The Crew {#crew}
 
-You ask. ARIS answers at once: Vasquez on the ridge, walking. Ito in the debris field, with the cargo. Channel three out of range, being relayed. "Seven aboard," she says, "four confirmed. That is a good number." It sounds like a weather report, and you are too tired to ask who the weather is for.
+You ask. ARIS answers at once: Vasquez on the ridge, walking. Ito in the wreck field, with the cargo. Channel three out of range, being relayed. "Seven aboard," she says, "four confirmed. That is a good number." It sounds like a weather report, and you are too tired to ask who the weather is for.
 
 {zweifel >= 1: Something registers: the pause before ARIS passes on an answer from the others is the same length every time. To the second.}
 {zweifel >= 2: Vasquez says she is doing as well as can be expected. Ito says he is doing as well as can be expected. Word for word, down to the intonation.}
@@ -77,14 +77,12 @@ You keep asking, and while ARIS runs through her list, you hear it: under her vo
 { visits(arrival) >= 3 }
   The crash site again. The imprint in the scree is still waiting, and slowly you begin to wonder what for.
 
-{kurz_weg: You were gone for a while, and the place did not notice.}
-
 -> site
 
 # The Crash Site {#site}
 
 { visits(site) == 1 }
-  The nightside. No horizon with light standing on it, only grades of black. On one side the ground falls away to the debris field, where something glows at intervals that should not be burning. On the other the ridge climbs, an edge against the starfield. In between: you, a suit, and a voice on the radio.
+  The nightside. No horizon with light standing on it, only grades of black. On one side the ground falls away to the wreck field, where something glows at intervals that should not be burning. On the other the ridge climbs, an edge against the starfield. In between: you, a suit, and a voice on the radio.
   {is_dark: It is dark, and according to ARIS it will stay that way for a while. She names a number you forget at once.|At the edge of the plain stands a strip of grey. ARIS calls it morning. You would call it an imposition, but at least it is a direction.}
 { visits(site) <= 3 }
   The plain, the wreck field below, the ridge above. You know the arrangement now, and it has not improved.
@@ -94,8 +92,8 @@ You keep asking, and while ARIS runs through her list, you hear it: under her vo
 { knows("MORGEN") and not knows("EBENE-HELL") }
   In the first light the plain is grey instead of black, and for the first time you see how far it goes. It does not help.
   ~ remember("EBENE-HELL")
-{kurz_weg: You have been standing still for a while. The suit kept count.}
-{lang_weg: You have been standing still for a very long time. The planet has not moved in that time, not visibly anyway, and that worries you more than it should.}
+{kurz_weg and not lang_weg: A while has passed. The suit kept count.}
+{lang_weg: A very long time has passed. The planet has not moved, not visibly anyway, and that worries you more than it should.}
 {air <= 15: The suit has found a new register for the air: shorter reports, at shorter intervals. It calls this prioritising.}
 
 * [Search the wreckage](#debris)
@@ -107,7 +105,7 @@ You keep asking, and while ARIS runs through her list, you hear it: under her vo
 
 # The Wreckage {#debris}
 
-A scatter of plating that used to be hull section C. Between the panels lies a crowbar, as naturally as if someone had set it out for you. You take it. On a planet without doors that seems excessive, but doors have a habit of turning up.
+A scatter of plating that used to be hull section C. Between the panels lies a pry bar, as naturally as if someone had set it out for you. You take it. On a planet without doors that seems excessive, but doors have a habit of turning up.
 
 ~ take("brechstange")
 
@@ -140,9 +138,9 @@ You sit down with your back against a piece of hull and do nothing for a while. 
 
 # Setting Out {#depart}
 
-Two directions that have names: the debris field down on the plain, the ridge above you. There would be a third, if you knew where to go. ARIS gives distances in minutes, as if they were prices.
+Two directions that have names: the wreck field down on the plain, the ridge above you. {knows("SENKE"): And a third, now that you know where: the basin to the south.|There would be a third, if you knew where to go.} ARIS gives distances in minutes, as if they were prices.
 
-* [Descend to the debris field](#wreck.arrival)
+* [Descend to the wreck field](#wreck.arrival)
   ~ location = place("wreck")
   ~ time = time + 20
 * [Walk to the ridge](#ridge.arrival)

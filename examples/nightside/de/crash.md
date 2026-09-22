@@ -77,8 +77,6 @@ Du fragst weiter, und während ARIS aufzählt, hörst du es: unter ihrer Stimme 
 { visits(arrival) >= 3 }
   Wieder die Absturzstelle. Der Abdruck im Geröll wartet noch, und langsam fragst du dich, worauf.
 
-{kurz_weg: Du warst eine Weile fort, und der Ort hat es nicht bemerkt.}
-
 -> site
 
 # Die Absturzstelle {#site}
@@ -94,8 +92,8 @@ Du fragst weiter, und während ARIS aufzählt, hörst du es: unter ihrer Stimme 
 { knows("MORGEN") and not knows("EBENE-HELL") }
   Im ersten Licht ist die Ebene grau statt schwarz, und du siehst zum ersten Mal, wie weit sie geht. Es hilft nicht.
   ~ remember("EBENE-HELL")
-{kurz_weg: Du hast eine Weile stillgestanden. Der Anzug hat mitgezählt.}
-{lang_weg: Du hast sehr lange stillgestanden. Der Planet hat sich in der Zeit nicht bewegt, jedenfalls nicht sichtbar, und das beunruhigt dich mehr, als es sollte.}
+{kurz_weg and not lang_weg: Es ist eine Weile vergangen. Der Anzug hat mitgezählt.}
+{lang_weg: Es ist sehr viel Zeit vergangen. Der Planet hat sich nicht bewegt, jedenfalls nicht sichtbar, und das beunruhigt dich mehr, als es sollte.}
 {air <= 15: Der Anzug hat für die Luft eine neue Tonlage gefunden: kürzere Meldungen, in kürzeren Abständen. Er nennt es Priorisierung.}
 
 * [Die Trümmer durchsuchen](#debris)
@@ -140,7 +138,7 @@ Du setzt dich mit dem Rücken an ein Stück Rumpf und tust eine Weile nichts. De
 
 # Aufbruch {#depart}
 
-Zwei Richtungen, die einen Namen haben: das Wrackfeld unten in der Ebene, der Grat über dir. Eine dritte gäbe es, wenn du wüsstest, wohin. ARIS nennt Entfernungen in Minuten, als wären es Preise.
+Zwei Richtungen, die einen Namen haben: das Wrackfeld unten in der Ebene, der Grat über dir. {knows("SENKE"): Und eine dritte, seit du weißt, wohin: die Senke im Süden.|Eine dritte gäbe es, wenn du wüsstest, wohin.} ARIS nennt Entfernungen in Minuten, als wären es Preise.
 
 * [Zum Wrackfeld absteigen](#wreck.arrival)
   ~ location = place("wreck")

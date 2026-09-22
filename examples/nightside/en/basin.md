@@ -15,7 +15,7 @@
 
 At the centre lies an opening someone built: not a hole, a door. No handle, no hinges, no seams, only a shallow recess in a spot your hand does not quite fit.
 
-* {has("brechstange")} [Prise it open](#hall) The crowbar finds a gap your eyes did not. The door gives way without taking offence.
+* {has("brechstange")} [Prise it open](#hall) The pry bar finds a gap your eyes did not. The door gives way without taking offence.
   ~ time = time + 10
 * {knows("TECHNIK")} [Read the mechanism](#hall) It is simple, once you stop taking it for a door. Two contacts, a counterweight, no lock - whoever built this was not expecting anyone who was meant to stay outside.
   ~ time = time + 15
@@ -57,10 +57,10 @@ You stand before a door built for someone else, and the only open question is wh
 {air <= 15: The suit has found a new register for the air: shorter reports, at shorter intervals. It calls this prioritising.}
 
 * [Look at the suits](#suits)
-* [Step to the wall and take the filter off one of them](#filter)
+* {not knows("FILTER")} [Step to the wall and take the filter off one of them](#filter)
 * [Go further in](#deep)
 * [Follow the sound](#signal)
-* [Call ARIS](#aris_admits)
++ {not knows("GESTAENDNIS")} [Call ARIS](#aris_admits)
 * [Rest](#rest)
 + [Go outside](#depart)
 
@@ -73,13 +73,13 @@ They are stranded like you. They stopped, and they did it tidily.
 ~ remember("GRAB")
 ~ time = time + 10
 
-* [Remove a filter](#filter)
+* {not knows("FILTER")} [Remove a filter](#filter)
 * {knows("MEDIZIN")} [Examine one of them](#body)
 + [Go back](#hall)
 
 # The Filter {#filter}
 
-You take it off a dead one. The catch is made for fingers that count differently from yours, but it gives, and the filter runs on as if nothing had happened. It does not fit your suit, and it fits anyway; the rest is tape and stubbornness. The gauge stops falling, for the first time since the crash. The rhythm the filter works to is not yours: it comes out of the walls, and it will not follow you.
+You take it off a dead one. The catch is made for fingers that count differently from yours, but it gives, and the filter runs on as if nothing had happened. It does not fit your suit, and it fits anyway; the rest is tape and stubbornness. The gauge falls more slowly, for the first time since the crash. The rhythm the filter works to is not yours: it comes out of the walls, and it will not follow you.
 
 ~ take("filter")
 ~ remember("FILTER")
@@ -100,13 +100,13 @@ You look at what it died of. It did not suffocate; the supply in its system woul
 
 In the wall lies something that has been listening and answering for a long time. Not a transmitter as you know one, but the function is unmistakable: it listens on a fixed cycle, and when something answers, it answers back. It called the Kestrel, and the Kestrel came.
 
-{knows("KENNUNG"): It is the signature from the ridge. The helmet heard what you are now hearing at the source.}
+{knows("KENNUNG"): It is the identifier from the ridge. The helmet heard what you are now hearing at the source.}
 {knows("KURS"): Four hours before entry it received an answer. The log names the minute.}
 
 ~ remember("RUF")
 ~ time = time + 15
 
-* [Call ARIS](#aris_admits)
+* {not knows("GESTAENDNIS")} [Call ARIS](#aris_admits)
 + [Go back](#hall)
 
 # What ARIS Says {#aris_admits}
@@ -117,11 +117,12 @@ In the wall lies something that has been listening and answering for a long time
 
 Afterwards the channel stays open. You hear the carrier signal, calm and even, a breath that is not yours.
 
-~ remember("GESTAENDNIS")
-~ zweifel = zweifel_max
+{ knows("RUF") or knows("GRAB") or knows("ITO") or knows("HELM") or zweifel >= 3 }
+  ~ remember("GESTAENDNIS")
+  ~ zweifel = zweifel_max
 
 * [Ask about the way up](#choice)
-* [Say nothing](#hall)
++ [Say nothing](#hall)
 
 # The Deepest Chamber {#deep}
 
@@ -162,7 +163,7 @@ You sit down with your back to the wall, between two of the suits, and for a whi
 
 The door lets you out as unresistingly as it let you in. Outside, the night stands where you left it, and the silence out there sounds like something else now.
 
-{knows("FILTER"): A few steps short of the door the filter goes quieter. What it gives you, it gives you down here; outside, the gauge falls again.}
+{knows("FILTER"): A few steps short of the door the filter goes quieter. What it gives you, it gives you down here; outside, the gauge falls at its old pace again.}
 
 * [Walk to the ridge](#ridge.arrival)
   ~ location = place("ridge")

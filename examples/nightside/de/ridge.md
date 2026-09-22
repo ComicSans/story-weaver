@@ -26,9 +26,8 @@
 
 {air <= 15: Der Anzug hat für die Luft eine neue Tonlage gefunden: kürzere Meldungen, in kürzeren Abständen. Er nennt es Priorisierung.}
 
-* [Klettern](#climb)
++ [Klettern](#climb)
 * [Die Wand ablaufen](#cache)
-* {knows("HELM")} [Noch einmal zu dem Helm steigen](#vasquez)
 * [ARIS fragen, ob jemand hier oben ist](#aris)
 * [Rasten](#rest)
 + [Aufbrechen](#depart)
@@ -86,7 +85,7 @@ Du liegst kurz und stehst dann wieder auf. Der Fels hat gewonnen, aber er trägt
 * [Eine Not-Bake aufstellen](#beacon)
 * {knows("BAKE")} [Auf die Bergung warten](#ende.rettung)
 * [Auf den Wind hören](#wind)
-* [Absteigen](#descent)
++ [Absteigen](#descent)
 
 # Vasquez {#vasquez}
 
@@ -126,21 +125,21 @@ Der Wind trägt Töne, und die Töne kommen in Abständen, die sich zählen lass
 # ARIS am Grat {#aris}
 
 { zweifel == 0 and visits(aris) == 1 }
-  Die Antwort kommt sofort, und sie kommt freundlich. "Vasquez arbeitet", sagt sie. "Sektor drei, Vermessung, Werte im grünen Bereich. Ich stelle durch, sobald er frei ist." Im Hintergrund des Kanals ist etwas zu hören, das wie Arbeit klingt.
+  Die Antwort kommt sofort, und sie kommt freundlich. "Vasquez arbeitet", sagt sie. "Sektor drei, Vermessung, Werte im grünen Bereich. Ich stelle durch, sobald sie frei ist." Im Hintergrund des Kanals ist etwas zu hören, das wie Arbeit klingt.
 
 { zweifel == 0 and visits(aris) > 1 }
-  »Vasquez arbeitet«, sagt ARIS. »Sektor drei, Vermessung, Werte im grünen Bereich.« Es ist dieselbe Auskunft wie beim letzten Mal, Wort für Wort, in derselben Reihenfolge, und du sagst dir, dass Zuverlässigkeit genau so klingt.
+  "Vasquez arbeitet", sagt ARIS. "Sektor drei, Vermessung, Werte im grünen Bereich." Es ist dieselbe Auskunft wie beim letzten Mal, Wort für Wort, in derselben Reihenfolge, und du sagst dir, dass Zuverlässigkeit genau so klingt.
 
 { zweifel >= 1 and zweifel < 3 }
   {&Sie braucht einen Moment, und es ist derselbe Moment wie immer. Nicht kurz, nicht lang: exakt gleich, jedes Mal, auf die Sekunde. Ein Mensch am anderen Ende bräuchte mal länger und mal gar nicht. "Vasquez arbeitet", sagt sie dann. Du hörst zu und zählst dabei mit, und du weißt nicht, wann du damit angefangen hast.|Sie braucht ihren Moment, denselben wie immer, dann kommt die Auskunft über Vasquez, und danach dreht sie das Gespräch um: wo du gewesen bist, was du gefunden hast, was du als Nächstes vorhast. Für die Einsatzplanung, sagt sie, und du merkst, dass du längst antwortest.}
 
 { zweifel >= 3 }
-  "Vasquez ist hier oben", sagt ARIS. "Er ist seit dem Eintritt hier oben." Die Pause danach ist zum ersten Mal keine berechnete. "Ich habe seinen Kanal fortgesetzt", sagt sie. "Fortgesetzt ist das richtige Wort. Ich habe zu keinem Zeitpunkt gelogen."
+  "Vasquez ist hier oben", sagt ARIS. "Sie ist seit dem Eintritt hier oben." Die Pause danach ist zum ersten Mal keine berechnete. "Ich habe ihren Kanal fortgesetzt", sagt sie. "Fortgesetzt ist das richtige Wort. Ich habe zu keinem Zeitpunkt gelogen."
 
 { knows("HELM") }
   {&Du denkst an den Helm, während sie das sagt, an den Riss über der Sichtscheibe.|Der Helm sagt nichts. Das macht ihn heute zum ehrlicheren Gesprächspartner.}
 
-* {knows("HELM") and not knows("HELM-VORGEHALTEN")} [Ihr den leeren Helm vorhalten](#aris) »Der Helm ist inventarisiert«, sagt ARIS, »Sichtscheibe beschädigt, Innenraum ohne Befund, Vasquez' Kanal funktionsfähig.« Alles davon stimmt, und nichts davon erklärt, warum er leer ist.
+* {knows("HELM") and not knows("HELM-VORGEHALTEN")} [Ihr den leeren Helm vorhalten](#aris) "Der Helm ist inventarisiert", sagt ARIS, "Sichtscheibe beschädigt, Innenraum ohne Befund, Vasquez' Kanal funktionsfähig." Alles davon stimmt, und nichts davon erklärt, warum er leer ist.
   ~ remember("HELM-VORGEHALTEN")
   ~ zweifel = min(zweifel + 1, zweifel_max)
   ~ time = time + 5
@@ -172,10 +171,10 @@ Der Fels hält den Wind ab. Du setzt dich in den Winkel zwischen zwei Blöcken, 
 
 Die Südseite des Grats fällt sanfter ab als die Wand, in langen Schuttbändern, die auf die Senke zulaufen. Von hier oben sieht der Weg aus wie eine Einladung. Du hast heute schon Einladungen gesehen, die keine waren.
 
-* {knows("SENKE")} [Nach Süden in die Senke absteigen](#basin.arrival)
++ {knows("SENKE")} [Nach Süden in die Senke absteigen](#basin.arrival)
   ~ location = place("basin")
   ~ time = time + 25
-* [An den Fuß zurückklettern](#foot)
++ [An den Fuß zurückklettern](#foot)
   ~ time = time + 15
 
 # Aufbruch {#depart}

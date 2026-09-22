@@ -65,8 +65,8 @@ events:
     when: 'knows("WUNDE")'
     do: 'air -= 1'
 
-  # Der fremde Filter passt nicht ganz: er haelt die Uhr auf, er dreht sie
-  # nicht zurueck. Wer in der Senke bleibt, gewinnt Zeit und keine Ewigkeit.
+  # Der fremde Filter passt nicht ganz: er bremst die Uhr, er haelt sie
+  # nicht an. Wer in der Senke bleibt, gewinnt Zeit und keine Ewigkeit.
   filter_feeds:
     counter: 'time'
     every: 16

@@ -18,7 +18,7 @@ Your adventure ends here.
 The beacon has been transmitting all night, and now someone answers it. The window opens, the capsule comes down, and it has exactly one seat.
 
 {knows("GESTAENDNIS"): ARIS reports six survivors to the rescue crew. You do not correct it right away. You do not correct it at all.}
-{knows("GRAB"): Below you the hollow shrinks until it looks like landscape again.}
+{knows("GRAB"): Below you the basin shrinks until it looks like landscape again.}
 
 Up there they will ask what happened on the nightside. You have the whole climb to settle on a version, and you already know which parts will be missing.
 

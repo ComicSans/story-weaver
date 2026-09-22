@@ -42,7 +42,7 @@
 * [Walk to the radio mast](#mast)
 * [Walk over to where the tarpaulins lie](#bodies)
 * [Walk to the ruptured tank](#tank)
-* {knows("KURS") or knows("BAHN")} [Put the course data together](#map)
+* {knows("KURS") or knows("BAHN")} [Work through the course data](#map)
 + {zweifel >= 1} [Confront ARIS](#aris)
 * [Rest](#rest)
 + [Move on](#depart)
@@ -84,6 +84,8 @@ The locker is still upright, which makes it the exception in this field. The fra
     The locker does not give way. Your shoulder does.
     ~ stamina = stamina - 2
     ~ time = time + 10
+    The cartridges behind it stay where they are.
+    -> field
 + [Go back to the field](#field)
 ---
 The locker has nothing more to offer. The rest was budgeted for people who no longer need it.
@@ -112,7 +114,7 @@ Under the tarpaulins lie four suits, weighted down with cargo straps, neatly ali
 
 # Ito {#ito}
 
-It is Ito. The suit carries his name, and ten minutes ago he told you over the radio that the wreck field was a rich site. He was right.
+It is Ito. The suit carries his name, and according to ARIS he is out here. That much is true.
 
 {knows("MEDIZIN"): You look at the skin, the frost in the suit's creases, the stiffness. Ito did not die in the crash. He was dead before it.}
 
@@ -198,7 +200,14 @@ The drone tips over and runs down. Out of the salvage bay falls the thing it was
 
 # The Course Data {#map}
 
-You lay the course change from the logbook over what you know about the trajectory. The new course does not point at orbit and does not point at the dayside. It points at a basin in the south. Somebody steered the Kestrel there, and you are the part of the cargo that still walks.
+{ knows("KURS") and knows("BAHN") }
+  You lay the course change from the logbook over the trajectory you worked out from the stars.
+{ knows("KURS") }
+  You run the course change from the logbook all the way down to the ground.
+{ else }
+  You extend the trajectory you worked out from the stars down to the ground.
+
+The course does not point at orbit and does not point at the dayside. It points at a basin in the south. Somebody steered the Kestrel there, and you are the part of the cargo that still walks.
 
 ~ remember("SENKE")
 ~ time = time + 15

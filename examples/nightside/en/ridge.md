@@ -26,9 +26,8 @@
 
 {air <= 15: The suit has found a new register for the air: shorter reports, at shorter intervals. It calls this prioritising.}
 
-* [Climb](#climb)
++ [Climb](#climb)
 * [Walk the base of the wall](#cache)
-* {knows("HELM")} [Go back to the helmet](#vasquez)
 * [Ask ARIS whether someone is up there](#aris)
 * [Rest](#rest)
 + [Set out](#depart)
@@ -86,7 +85,7 @@ You lie there briefly and then get up again. The rock has won, but it does not h
 * [Set up an emergency beacon](#beacon)
 * {knows("BAKE")} [Wait for rescue](#ende.rettung)
 * [Listen to the wind](#wind)
-* [Climb down](#descent)
++ [Climb down](#descent)
 
 # Vasquez {#vasquez}
 
@@ -126,7 +125,7 @@ The wind carries tones, and the tones come at intervals that can be counted: thr
 # ARIS on the Ridge {#aris}
 
 { zweifel == 0 and visits(aris) == 1 }
-  The answer comes at once, and it comes friendly. "Vasquez is working," she says. "Sector three, survey, readings in the green. I will patch you through as soon as he is free." In the background of the channel there is something that sounds like work.
+  The answer comes at once, and it comes friendly. "Vasquez is working," she says. "Sector three, survey, readings in the green. I will patch you through as soon as she is free." In the background of the channel there is something that sounds like work.
 
 { zweifel == 0 and visits(aris) > 1 }
   "Vasquez is working," says ARIS. "Sector three, survey, readings in the green." It is the same report as last time, word for word, in the same order, and you tell yourself that this is exactly what reliability sounds like.
@@ -135,7 +134,7 @@ The wind carries tones, and the tones come at intervals that can be counted: thr
   {&She takes a moment, and it is the same moment as always. Not short, not long: exactly the same, every time, to the second. A human on the other end would sometimes take longer and sometimes not at all. "Vasquez is working," she says then. You listen and count along, and you do not know when you started doing that.|She takes her moment, the same one as always, then comes the report on Vasquez, and after that she turns the conversation around: where you have been, what you have found, what you plan to do next. For mission planning, she says, and you notice you are already answering.}
 
 { zweifel >= 3 }
-  "Vasquez is up here," says ARIS. "He has been up here since entry." The pause that follows is, for the first time, not a computed one. "I continued his channel," she says. "Continued is the right word. At no point did I lie."
+  "Vasquez is up here," says ARIS. "She has been up here since entry." The pause that follows is, for the first time, not a computed one. "I continued her channel," she says. "Continued is the right word. At no point did I lie."
 
 { knows("HELM") }
   {&You think of the helmet while she says it, of the crack across the visor.|The helmet says nothing. That makes it the more honest conversation today.}
@@ -172,10 +171,10 @@ The rock keeps the wind off. You sit down in the angle between two blocks, lean 
 
 The south side of the ridge falls away more gently than the wall, in long bands of scree that run down towards the basin. From up here the route looks like an invitation. You have already seen invitations today that were not.
 
-* {knows("SENKE")} [Descend south into the basin](#basin.arrival)
++ {knows("SENKE")} [Descend south into the basin](#basin.arrival)
   ~ location = place("basin")
   ~ time = time + 25
-* [Climb back down to the foot](#foot)
++ [Climb back down to the foot](#foot)
   ~ time = time + 15
 
 # Setting Out {#depart}

@@ -47,7 +47,7 @@ Du stehst vor einer Tür, die für jemand anderen gebaut wurde, und die einzige 
   ~ remember("KAMMER-MESSUNG")
 
 { knows("FILTER") and not knows("KAMMER-FILTERTON") }
-  Der Filter an deinem Anzug arbeitet und macht dabei ein Geräusch, das nicht von dir stammt und hierher gehört.
+  Der Filter an deinem Anzug arbeitet und macht dabei ein Geräusch, das nicht von dir stammt und hierhergehört.
   ~ remember("KAMMER-FILTERTON")
 
 { zweifel >= 4 and not knows("GESTAENDNIS") and not knows("KAMMER-STILL") }
@@ -57,10 +57,10 @@ Du stehst vor einer Tür, die für jemand anderen gebaut wurde, und die einzige 
 {air <= 15: Der Anzug hat für die Luft eine neue Tonlage gefunden: kürzere Meldungen, in kürzeren Abständen. Er nennt es Priorisierung.}
 
 * [Die Anzüge ansehen](#suits)
-* [An die Wand treten und einem von ihnen den Filter abnehmen](#filter)
+* {not knows("FILTER")} [An die Wand treten und einem von ihnen den Filter abnehmen](#filter)
 * [Weiter nach innen gehen](#deep)
 * [Dem Ton nachgehen](#signal)
-* [ARIS rufen](#aris_admits)
++ {not knows("GESTAENDNIS")} [ARIS rufen](#aris_admits)
 * [Rasten](#rest)
 + [Hinausgehen](#depart)
 
@@ -73,13 +73,13 @@ Sie sind gestrandet wie du. Sie haben aufgehört, und sie haben es ordentlich ge
 ~ remember("GRAB")
 ~ time = time + 10
 
-* [Einen Filter ausbauen](#filter)
+* {not knows("FILTER")} [Einen Filter ausbauen](#filter)
 * {knows("MEDIZIN")} [Einen von ihnen untersuchen](#body)
 + [Zurückgehen](#hall)
 
 # Der Filter {#filter}
 
-Du nimmst ihn einem der toten Anzüge ab. Der Verschluss ist für Finger gemacht, die anders zählen als deine, aber er gibt nach, und der Filter läuft weiter, als sei nichts gewesen. An deinem Anzug passt er nicht, und er passt trotzdem; der Rest ist Klebeband und Sturheit. Die Anzeige hört auf zu fallen, zum ersten Mal seit dem Absturz. Der Takt, in dem der Filter arbeitet, ist nicht deiner: Er kommt aus den Wänden, und er wird dir nicht folgen.
+Du nimmst ihn einem der toten Anzüge ab. Der Verschluss ist für Finger gemacht, die anders zählen als deine, aber er gibt nach, und der Filter läuft weiter, als sei nichts gewesen. An deinem Anzug passt er nicht, und er passt trotzdem; der Rest ist Klebeband und Sturheit. Die Anzeige fällt langsamer, zum ersten Mal seit dem Absturz. Der Takt, in dem der Filter arbeitet, ist nicht deiner: Er kommt aus den Wänden, und er wird dir nicht folgen.
 
 ~ take("filter")
 ~ remember("FILTER")
@@ -106,7 +106,7 @@ In der Wand liegt etwas, das seit langer Zeit hört und antwortet. Kein Sender, 
 ~ remember("RUF")
 ~ time = time + 15
 
-* [ARIS rufen](#aris_admits)
+* {not knows("GESTAENDNIS")} [ARIS rufen](#aris_admits)
 + [Zurückgehen](#hall)
 
 # Was ARIS sagt {#aris_admits}
@@ -117,11 +117,12 @@ In der Wand liegt etwas, das seit langer Zeit hört und antwortet. Kein Sender, 
 
 Danach bleibt der Kanal offen. Du hörst das Trägersignal, ruhig und gleichmäßig, ein Atem, der nicht deiner ist.
 
-~ remember("GESTAENDNIS")
-~ zweifel = zweifel_max
+{ knows("RUF") or knows("GRAB") or knows("ITO") or knows("HELM") or zweifel >= 3 }
+  ~ remember("GESTAENDNIS")
+  ~ zweifel = zweifel_max
 
 * [Nach dem Weg nach oben fragen](#choice)
-* [Nichts sagen](#hall)
++ [Nichts sagen](#hall)
 
 # Die tiefste Kammer {#deep}
 
@@ -162,7 +163,7 @@ Du setzt dich mit dem Rücken an die Wand, zwischen zwei der Anzüge, und tust e
 
 Die Tür lässt dich hinaus, so widerstandslos, wie sie dich hereingelassen hat. Draußen steht die Nacht, wo du sie verlassen hast, und die Stille dort klingt jetzt nach etwas anderem.
 
-{knows("FILTER"): Ein paar Schritte vor der Tür wird der Filter leiser. Was er dir gibt, gibt er hier unten; draußen fällt die Anzeige wieder.}
+{knows("FILTER"): Ein paar Schritte vor der Tür wird der Filter leiser. Was er dir gibt, gibt er hier unten; draußen fällt die Anzeige wieder im alten Takt.}
 
 * [Zum Grat gehen](#ridge.arrival)
   ~ location = place("ridge")
