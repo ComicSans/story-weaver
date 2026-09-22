@@ -50,7 +50,7 @@ Du stehst vor einer Tür, die für jemand anderen gebaut wurde, und die einzige 
   Der Filter an deinem Anzug arbeitet und macht dabei ein Geräusch, das nicht von dir stammt und hierher gehört.
   ~ remember("KAMMER-FILTERTON")
 
-{ zweifel >= 4 and not knows("KAMMER-STILL") }
+{ zweifel >= 4 and not knows("GESTAENDNIS") and not knows("KAMMER-STILL") }
   ARIS ist seit dem Eingang still. Es ist das erste Mal, dass sie nichts zu sagen hat.
   ~ remember("KAMMER-STILL")
 

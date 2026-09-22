@@ -50,7 +50,7 @@ You stand before a door built for someone else, and the only open question is wh
   The filter on your suit is working, and makes a sound that is not yours and belongs here.
   ~ remember("KAMMER-FILTERTON")
 
-{ zweifel >= 4 and not knows("KAMMER-STILL") }
+{ zweifel >= 4 and not knows("GESTAENDNIS") and not knows("KAMMER-STILL") }
   ARIS has been silent since the entrance. It is the first time she has had nothing to say.
   ~ remember("KAMMER-STILL")
 

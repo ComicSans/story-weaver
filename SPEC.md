@@ -589,6 +589,12 @@ a line, so that nothing collides with choices:
 The conditions are tried from top to bottom, and the first true one wins, with
 `{ else }` catching whatever falls through.
 
+**A blank line ends the chain.** The header below it starts a new one, tried
+whatever the one above decided, so two blocks that have nothing to do with
+each other are written the way paragraphs are, with a blank line between
+them. `{ else }` is the one exception: it has nothing to start and belongs to
+the chain above it, blank line or not.
+
 A branch header and the varying text of 5.6 both start with `{`, and the
 compiler has to tell them apart. **Disambiguation rule.** A line beginning with
 `{` is inline text if any of these hold:
@@ -1939,6 +1945,7 @@ edges.
 | 20 to 23    | Export, hosts, the runtime API and the host protocol moved to `HOSTS.md`. An author needs none of them, and two hosts are built against them, so they have a document of their own. The open points went with them. What sections 22 said about L021, L025, L028 and L029 that was a rule rather than a reason now stands in 19. |
 | 6, 15       | `turns_since()` removed. It never returned turns since anything: the save records which nodes have been seen, not when, so the call answered with the total turn count or `-1`. An event on `counter: 'turns()'`, or a variable the book sets itself, does what it promised. |
 | 23          | Images, L025, the catch-up mode and the new-edition question leave the open points; what stays of 23.4 is what an alt text owes a map. |
+| 5.7         | A blank line ends a chain of `{ }` headers, so two blocks meant to stand on their own no longer swallow each other; `{ else }` stays with the chain above it. Before, a first true header silenced every block below it down to the next line that was not a header. |
 | 4.3, 15, 17.1 | Choice and alternative ids carry the namespace in a multi-file book: `crypt.chamber:c0`, not `chamber:c0`. Two chapters with a node of the same name shared one count before, so a once-only choice taken in one vanished from the other. A save from before keeps its other fields, and its once-only choices of a multi-file book are offered again. |
 
 ### 0.6 to 0.7

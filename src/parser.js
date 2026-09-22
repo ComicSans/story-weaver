@@ -231,6 +231,10 @@ function parseBranch(lines, i, depth, state) {
   while (i + consumed < lines.length) {
     const head = lines[i + consumed];
     if (head.depth !== depth || head.kind !== 'block') break;
+    // A blank line ends the chain (SPEC 5.7): the header below it starts a
+    // new one and is tried whatever this one decided. Only `{ else }` has
+    // nothing to start and stays with the chain above it.
+    if (consumed > 0 && head.blankBefore && !isElse(head.text)) break;
     if (otherwise) {
       throw new CompileError('E011', 'nothing may follow {else} in a branch', head);
     }

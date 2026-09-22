@@ -84,6 +84,28 @@ test('branches collect their conditions and an else', () => {
   assert.equal(ops[0].else.length, 2);
 });
 
+test('a blank line ends a chain of branches, but an else stays with the one above', () => {
+  // nightside wrote a visit counter and then, a blank line further down,
+  // blocks about the suit and the filter. As one chain the counter always
+  // won and the blocks below it never printed; house lost its sleeping
+  // cultist on the first visit to the wine cellar the same way.
+  const ops = firstBody([
+    '# A {#a}', '',
+    '{ visits(a) == 1 }', '  First.',
+    '{ visits(a) >= 2 }', '  Again.',
+    '',
+    '{ gold >= 0 }', '  Always.',
+    '',
+    '{ else }', '  Never.',
+    '-> END',
+  ].join('\n'));
+  assert.deepEqual(ops.map((op) => op.op), ['branch', 'branch', 'divert']);
+  assert.equal(ops[0].branches.length, 2);
+  assert.ok(!ops[0].else, 'the first chain has no else of its own');
+  assert.equal(ops[1].branches.length, 1);
+  assert.equal(ops[1].else.length, 1);
+});
+
 test('combat exits accept both the plain and the choice form', () => {
   const frontmatter = `---
 title: T
