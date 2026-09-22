@@ -466,18 +466,18 @@ keine dritte.}
 
 # Der Anleger {#anleger}
 
+{ zeit >= 90 }
+  Vom Anleger stehen noch die Pfähle. Du siehst die Welle nicht kommen,
+  du hörst sie nur, und dann ist zwischen dir und dem Turm auf einmal
+  See.
+  -> weggespuelt
+
 { tag and lampe }
   -> morgen
 { tag }
   -> grauermorgen
 
 ~ im_keller = 0
-
-{ sturm }
-  Vom Anleger stehen noch die Pfähle. Du siehst die Welle nicht kommen,
-  du hörst sie nur, und dann ist zwischen dir und dem Turm auf einmal
-  See.
-  -> weggespuelt
 
 {Vier Pfähle, ein Bohlensteg, zwei Ringe für die Leinen. Die See davor
 ist leer bis zum Horizont. Das Boot kommt am Morgen, so war es
@@ -502,19 +502,19 @@ Sturm kommt, gehört der Steg ihr zuerst.}
 
 # Die Kiefern an der Nordkante {#windbruch}
 
+{ zeit >= 90 }
+  Unter den Kiefern liegt der Boden voller Nadeln und abgerissener
+  Zweige. Du hörst das Holz arbeiten, und dann hört eine der drei auf,
+  Widerstand zu leisten. Es ist kein großer Baum. Von hier unten sieht
+  er groß genug aus.
+  -> erschlagen
+
 { tag and lampe }
   -> morgen
 { tag }
   -> grauermorgen
 
 ~ im_keller = 0
-
-{ sturm }
-  Unter den Kiefern liegt der Boden voller Nadeln und abgerissener
-  Zweige. Du hörst das Holz arbeiten, und dann hört eine der drei auf,
-  Widerstand zu leisten. Es ist kein großer Baum. Von hier unten sieht
-  er groß genug aus.
-  -> erschlagen
 
 {Drei Kiefern, krumm vom Westwind, das einzige Holz der Bank, auf der
 einzigen Düne. Zwischen den Stämmen hindurch sieht man die Wolkenbank

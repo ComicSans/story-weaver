@@ -19,7 +19,9 @@ stats:
   # Die Schwellen des Buchs - Sturm, Stromausfall, Flut - hängen nur an
   # dieser Uhr, nie am Wetter von draußen: ohne Host-Zeit fallen sie bei
   # derselben Handlungsfolge immer gleich. Mit ihr rückt `echtzeit` die Uhr
-  # vor, und ab Minute 630 führt jeder Knoten mit Wahlen in den Morgen.
+  # vor, und ab Minute 630 führt jeder Knoten mit Wahlen in den Morgen -
+  # außer Steg und Kiefern: Wer dort stand, als der Sturm kam, erlebt ihn
+  # nicht, wie lange das Buch auch weggelegt war.
   zeit:   { name: { de: Minuten, en: Minutes }, start: 0 }
   wasser: { name: { de: Wasser im Keller, en: Water in the Cellar }, start: 0 }
   # Gewürfelt wird in diesem Buch an genau einer Stelle, der Außenleiter,
