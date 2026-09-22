@@ -21,6 +21,12 @@ test('--help after a command prints the usage instead of compiling a file called
   assert.equal(r.stderr, '');
 });
 
+test('mcp --help prints the usage instead of starting the server', () => {
+  const r = run('mcp', '--help');
+  assert.equal(r.status, 0);
+  assert.match(r.stdout, /^usage:/);
+});
+
 test('the usage names every command, import included', () => {
   const r = run('--help');
   for (const command of ['build', 'lint', 'export', 'bundle', 'play', 'simulate', 'import', 'mcp']) {

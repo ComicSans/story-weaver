@@ -1946,7 +1946,7 @@ edges.
 | 6, 15       | `turns_since()` removed. It never returned turns since anything: the save records which nodes have been seen, not when, so the call answered with the total turn count or `-1`. An event on `counter: 'turns()'`, or a variable the book sets itself, does what it promised. |
 | 23          | Images, L025, the catch-up mode and the new-edition question leave the open points; what stays of 23.4 is what an alt text owes a map. |
 | 5.7         | A blank line ends a chain of `{ }` headers, so two blocks meant to stand on their own no longer swallow each other; `{ else }` stays with the chain above it. Before, a first true header silenced every block below it down to the next line that was not a header. |
-| 4.3, 15, 17.1 | Choice and alternative ids carry the namespace in a multi-file book: `crypt.chamber:c0`, not `chamber:c0`. Two chapters with a node of the same name shared one count before, so a once-only choice taken in one vanished from the other. A save from before keeps its other fields, and its once-only choices of a multi-file book are offered again. |
+| 4.3, 15, 17.1 | Choice and alternative ids carry the namespace in a multi-file book: `crypt.chamber:c0`, not `chamber:c0`. Two chapters with a node of the same name shared one count before, so a once-only choice taken in one vanished from the other. In a multi-file book a save from before offers its once-only choices again and starts its sequences, cycles and once-only alternatives over, because `taken`, `alts` and `picks` are keyed by these ids; every other field carries over. |
 
 ### 0.6 to 0.7
 

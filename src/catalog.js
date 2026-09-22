@@ -104,7 +104,11 @@ export function parseCatalog(body, ctx) {
 
 /** Re-parses one node with the full grammar, because it overrides. */
 function parseOverride(entry, lines, ctx) {
-  const source = lines.map((l) => l.raw).join('\n');
+  // The lexer dropped the blank lines; put them back where they stood. A
+  // blank line ends a chain of `{ }` blocks (SPEC 5.7), and without it an
+  // overridden node would chain what its own language keeps apart - and
+  // report its errors on the wrong line.
+  const source = lines.map((l, i) => '\n'.repeat(i === 0 ? 0 : Math.max(0, l.line - lines[i - 1].line - 1)) + l.raw).join('\n');
   const { nodes } = parseStory(source, {
     file: ctx.file, startLine: lines[0].line, namespace: ctx.namespace,
   });

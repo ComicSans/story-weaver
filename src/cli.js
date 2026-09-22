@@ -36,13 +36,13 @@ const LEVEL_ORDER = { info: 0, warning: 1 };
 
 function main(argv) {
   const [command, entry, ...rest] = argv;
-  if (command === 'mcp') {
-    return serveMcp().then(() => 0);
-  }
   // `simulate --help` used to reach the compiler and die opening a file
   // called --help; asking for help after the command is still asking.
   const help = ['-h', '--help'].includes(command) || ['-h', '--help'].includes(entry);
-  if (!command || !entry || help) {
+  if (command === 'mcp' && !help) {
+    return serveMcp().then(() => 0);
+  }
+  if (!command || (!entry && command !== 'mcp') || help) {
     process.stdout.write([
       'usage:',
       '  story-weaver build    <entry> [--out FILE] [--strict] [--quiet]',

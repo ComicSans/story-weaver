@@ -110,6 +110,23 @@ test('a node with logic overrides, and is checked like the original', () => {
   assert.ok(warnings.messages.some((m) => m.code === 'L019'));
 });
 
+test('an override keeps its blank lines, so two chains stay two', () => {
+  // The catalogue parser drops blank lines, and the override was put back
+  // together without them: in nightside's English every block below a visit
+  // counter joined its chain and never printed (SPEC 5.7).
+  const { story } = build([
+    '# First node {#a}', '', 'A paragraph. {&A crack|Silence}', '',
+    '* On', '* Stay', '', 'You walk on.', '',
+    '# Second {#b}', '',
+    '{ gold >= 1 }', '  Some gold.',
+    '',
+    '{ gold >= 0 }', '  Always.',
+    '',
+    '-> END', '',
+  ].join('\n'));
+  assert.deepEqual(story.nodes.en.b.body.map((op) => op.op), ['branch', 'branch', 'divert']);
+});
+
 test('an override is resolved against the default language', () => {
   assert.throws(() => build([
     '# First node {#a}', '', 'A paragraph. {&A crack|Silence}', '',
