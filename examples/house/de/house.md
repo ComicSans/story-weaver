@@ -67,7 +67,7 @@ du die Titel liest, desto panischer wirst du: Bücher über Beschwörungen. Übe
 Die Macht der wahren Namen. Bücher darüber, wie man etwas ruft - und drei
 deutlich dünnere darüber, wie man es wieder loswird.
 
-{!Du schlägst eines auf und liest eine halbe Seite über das, was etwas Gerufenes als Lohn verlangt, und in welcher Reihenfolge es sich nimmt. Du stellst das Buch zurück und wischst dir die Hand am Mantel ab.|Die Bücher sind noch da. Du bist noch da. Nur eines von beidem beruhigt dich.}
+{!Du schlägst eines auf und liest eine halbe Seite über das, was etwas Gerufenes als Lohn verlangt, und in welcher Reihenfolge es sich nimmt. Du stellst das Buch zurück und wischst dir die Hand am Ärmel ab.|Die Bücher sind noch da. Du bist noch da. Nur eines von beidem beruhigt dich.}
 
 { visits(library) == 1 }
   ~ fear = fear + 1
@@ -81,7 +81,7 @@ deutlich dünnere darüber, wie man es wieder loswird.
     sauberer, alter Tinte. Der unterste Eintrag ist von heute. Deine ANGST
     steigt.
     ~ fear = fear + 1
-* [Den Schürhaken vom Kamin mitnehmen](#library) Er ist schwer und wiegt gut in der Hand, was in diesem Haus ein Argument ist.
+* [Den Schürhaken vom Kamin mitnehmen](#library) Er ist schwer und liegt gut in der Hand, was in diesem Haus ein Argument ist.
   ~ take("poker")
   { not has("dagger") }
     ~ equip("poker")
@@ -176,7 +176,7 @@ hinaus, als kenne sie den Ausblick auswendig und prüfe ihn trotzdem.
 
 {choice_count() == 1: Es gibt nur einen Weg, und er führt hinunter.}
 
-* {knows("BETAEUBT") and knows("MECHANIKER")} [Die Scharniere aushängen]() Riegel sind Überzeugungssache, Scharniere sind Physik. Das Taschenmesser, das du seit der Lehre in der Westentasche trägst, hebelt die Stifte heraus. Die Tür lehnt sich dir in die Arme müde wie nach einer Doppelschicht.
+* {knows("BETAEUBT") and knows("MECHANIKER")} [Die Scharniere aushängen]() Riegel sind Überzeugungssache, Scharniere sind Physik. Das Taschenmesser, das du seit der Lehre in der Westentasche trägst, hebelt die Stifte heraus. Die Tür lehnt sich dir in die Arme, müde wie nach einer Doppelschicht.
 * {knows("BETAEUBT")} [Die Schulter benutzen]()
   { test("skill") }
     Der Riegel hält. Der Rahmen nicht.

@@ -16,7 +16,7 @@ brennt. Auf dem Torbogen steht ein Name, den der Efeu verdeckt.
 
 {!Zwei Flügel Schmiedeeisen, geschlossen, und im Bogen darüber hängt eine Glocke, deren Seil im Regen pendelt.|}
 
-{knows("GELAEUTET"): Das Tor steht offen, wie du es verlassen hast.}
+{knows("GELAEUTET"): Das Tor steht offen.}
 
 * {not knows("GELAEUTET")} [Läuten](#gate)
   Die Glocke klingt tiefer, als du erwartet hast.
@@ -54,7 +54,7 @@ Der Regen wird stärker, als wollte er dich zur Tür drängen.
 # Die Auffahrt {#drive}
 
 Kies, Pfützen, und ein Kettenhund, der ohne vorheriges Bellen aus dem Dunkeln
-kommt, einfach auftauchte und dich nun begutachtet. 
+kommt, einfach da ist und dich begutachtet.
 Die Kette, stellst du beim Näherkommen fest, hängt an nichts.
 
 ~ fear = fear + 1
@@ -82,7 +82,12 @@ Der Hund hat die Verhandlungen für beendet erklärt.
 
 # Vor der Tür {#door}
 
-{knows("UEBER-DIE-MAUER"): Von hier siehst du das offene Tor. Du bist über eine Mauer geklettert, keine zwanzig Schritte neben einem offenen Tor. Du beschließt, das niemandem zu erzählen.|Hinter dir fällt das Tor ins Schloss, ohne dass jemand es angefasst hätte.}
+{ knows("UEBER-DIE-MAUER") and knows("GELAEUTET") }
+  Von hier siehst du das offene Tor. Du bist über eine Mauer geklettert, keine zwanzig Schritte neben einem offenen Tor. Du beschließt, das niemandem zu erzählen.
+{ knows("UEBER-DIE-MAUER") }
+  Von hier siehst du das Tor. Es ist zu. Wenigstens bist du nicht umsonst geklettert.
+{ else }
+  Hinter dir fällt das Tor ins Schloss, ohne dass jemand es angefasst hätte.
 
 {knows("HUND-FREUND"): Der Hund setzt sich neben den Türklopfer, als gehöre er zum Personal, und sieht dich an, als wüsste er mehr über dieses Haus, als er bellen kann.}
 

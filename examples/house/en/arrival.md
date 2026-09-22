@@ -22,7 +22,7 @@ You don't have to ring straight away, after all.
 
 {!Two leaves of wrought iron, shut, and in the arch above hangs a bell, its rope swinging in the rain.|}
 
-{knows("GELAEUTET"): The gate stands open, the way you left it.}
+{knows("GELAEUTET"): The gate stands open.}
 
 * Ring the bell
 * Go through
@@ -37,7 +37,7 @@ Then the gate opens. By itself. Very slowly, with the sound that doors make in s
 
 # At the Wall {#wall}
 
-Head-high, cracks in the mortar, one gap left by last winter's frost.
+A good two metres high, cracks in the mortar, one gap left by last winter's frost.
 Forbidding. The master of the house evidently thinks little of
 unannounced guests, which almost endears him to you.
 
@@ -75,7 +75,11 @@ You reach the door with the breath of the drowning and the dignity of someone wh
 
 # At the Door {#door}
 
-{knows("UEBER-DIE-MAUER"): From here you can see the open gate. You climbed a wall not twenty paces from an open gate. You decide to tell no one.|Behind you the gate falls shut without anyone having touched it.}
+From here you can see the open gate. You climbed a wall not twenty paces from an open gate. You decide to tell no one.
+
+From here you can see the gate. It is shut. At least the climb was not for nothing.
+
+Behind you the gate falls shut without anyone having touched it.
 
 {knows("HUND-FREUND"): The hound sits down beside the door knocker as if he were staff, and looks at you as if he knew more about this house than he can bark.}
 

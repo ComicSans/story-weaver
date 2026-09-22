@@ -63,8 +63,7 @@ does not take his eyes off you. What he is holding under the table is not a
 corkscrew.
 
 At a table by the doorway a man in a robe lies asleep, head on his arms.
-Beside him stands a jug that smells of spiced wine - drinks are evidently
-served before the service.
+{?: The jug beside him is gone.|Beside him stands a jug that smells of spiced wine - drinks are evidently served before the service.}
 
 {knows("GEHEIMGANG"): From this side the wine rack is just a wine rack. You have to know the lie to see it.}
 
@@ -104,9 +103,7 @@ which someone has thrown a stone. It is not a blade for opening letters.
 
 # The Cellar {#rite}
 
-The chanting stops as you enter. Not because of you: it is finished. The circle no longer needs anyone in any particular place. It only needs you, and you are here.
-
-{visits(rite) == 1: Twelve figures in robes, a circle of chalk, in the middle a chair. The chanting does not falter as you enter. No one turns round. Your FEAR rises.|The circle, the robes, the chanting: everything is still there, and they all know you are back.}
+{visits(rite) == 1: Twelve figures in robes, a circle of chalk, in the middle a chair. The chanting does not falter as you enter. No one turns round. Your FEAR rises.|The circle, the robes, the chanting: all as it was, except that you are wearing your coat now, and every one of them saw it.}
 
 {not has("coat") and knows("BETAEUBT"): Over the back of the chair hangs your coat. It was taken from you while you slept, and hung up neatly.}
 
@@ -123,8 +120,6 @@ The chanting stops as you enter. Not because of you: it is finished. The circle 
 {visits(rite) == 1 and knows("NUECHTERN"): The master looks over at you, and then at the empty chair, as if to remark that there had been a more comfortable way here.}
 
 {visits(rite) == 1 and knows("KRUG-GEWUERZT"): The twelve robes are no longer standing especially straight. One yawns in mid-Latin, and the precentor gives him a look that would be a dismissal in better houses.}
-
-{visits(rite) == 3: The chanting is faster than it ever sounded at the door, and the pauses are gone. Whatever is meant to be finished here is very nearly so.}
 
 {fear >= 11: Your heart is beating everywhere now, in your wrists, in your throat, behind your eyes. It will not stand much more of this.}
 
@@ -178,7 +173,7 @@ it is hard to say which of you two this embarrasses more.
 You speak it. It is not hard to pronounce, which is the most astonishing
 thing about it.
 
-The chanting stops. The master goes very still. "From where," he says, and
+{?: The chanting stops.} The master goes very still. "From where," he says, and
 gets no further. Something leaves him - posture, colour, size, in that
 order. Names are contracts, you read or heard somewhere, presumably tonight.
 His has
@@ -236,7 +231,7 @@ had never been otherwise.
 
 {knows("HUND-FREUND"): At the gate the hound joins you without asking, and does not look back either.}
 
-{uses("brandy") > 0: A swallow or two still sloshes in the hip flask. You raise it to the house as you go, and drink none of it. Not on this occasion.}
+{uses("brandy") > 0: The hip flask still sloshes. You raise it to the house as you go, and drink none of it. Not on this occasion.}
 
 Two miles on, a milk lorry comes towards you. The driver takes you along,
 looks at you sideways, and asks nothing.
@@ -250,7 +245,7 @@ It is not the creature, not the butler, not the hound. It is the sum. Your
 heart has worked harder tonight than in all the years before, and at some
 point it works no more.
 
-You have lost more in this house than can be replaced, and at some point it
+You have lost more tonight than can be replaced, and at some point it
 was enough.
 
 Your adventure ends here.

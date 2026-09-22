@@ -66,7 +66,7 @@ bindings. On madness. The Power of True Names. Books on how to call
 something - and three
 distinctly thinner ones on how to get rid of it again.
 
-{!You open one and read half a page on what a summoned thing demands as payment, and in what order it takes it. You put the book back and wipe your hand on your coat.|The books are still there. You are still there. Only one of those two things reassures you.}
+{!You open one and read half a page on what a summoned thing demands as payment, and in what order it takes it. You put the book back and wipe your hand on your sleeve.|The books are still there. You are still there. Only one of those two things reassures you.}
 
 * Examine the shelf more closely
 * Take the poker from the fireplace

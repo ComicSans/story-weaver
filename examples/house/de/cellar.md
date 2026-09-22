@@ -78,9 +78,7 @@ genau das ist, was er zu sein vorgibt, und du bist beinahe erleichtert.
   dich nicht aus den Augen. Was er unter dem Tisch festhält, ist kein
   Korkenzieher.
 { else }
-  An einem Tisch beim Durchgang schläft ein Mann in einer Kutte, den Kopf auf
-  den Armen. Neben ihm steht ein Krug, aus dem es nach Würzwein riecht -
-  offenbar wird für die Andacht ausgeschenkt.
+  An einem Tisch beim Durchgang schläft ein Mann in einer Kutte, den Kopf auf den Armen. {knows("KRUG-GEWUERZT"): Der Krug neben ihm ist fort.|Neben ihm steht ein Krug, aus dem es nach Würzwein riecht - offenbar wird für die Andacht ausgeschenkt.}
 
 {knows("GEHEIMGANG"): Von dieser Seite ist das Weinregal nur ein Weinregal. Man muss die Lüge kennen, um sie zu sehen.}
 
@@ -132,11 +130,7 @@ man Briefe öffnet.
 
 # Der Keller {#rite}
 
-{ visits(rite) >= 4 }
-  Der Gesang hört auf, als du eintrittst. Nicht deinetwegen: Er ist fertig. Der Kreis braucht niemanden mehr an einem bestimmten Platz. Er braucht nur noch dich, und du bist da.
-  -> thing
-
-{visits(rite) == 1: Zwölf Gestalten in Kutten, ein Kreis aus Kreide, in der Mitte ein Stuhl. Der Gesang bricht nicht ab, als du eintrittst. Niemand dreht sich um. Deine ANGST steigt.|Der Kreis, die Kutten, der Gesang: Alles ist noch da, und alle wissen, dass du wieder da bist.}
+{visits(rite) == 1: Zwölf Gestalten in Kutten, ein Kreis aus Kreide, in der Mitte ein Stuhl. Der Gesang bricht nicht ab, als du eintrittst. Niemand dreht sich um. Deine ANGST steigt.|Der Kreis, die Kutten, der Gesang: Alles ist wie eben, nur trägst du jetzt deinen Mantel, und alle haben es gesehen.}
 
 {not has("coat") and knows("BETAEUBT"): Auf der Lehne des Stuhls hängt dein Mantel. Man hat ihn dir abgenommen, während du geschlafen hast, und ordentlich aufgehängt.}
 
@@ -153,8 +147,6 @@ man Briefe öffnet.
 {visits(rite) == 1 and knows("NUECHTERN"): Der Hausherr sieht zu dir herüber und dann zu dem leeren Stuhl, als wolle er anmerken, dass es einen bequemeren Weg hierher gegeben hätte.}
 
 {visits(rite) == 1 and knows("KRUG-GEWUERZT"): Die zwölf Kutten stehen nicht mehr besonders gerade. Einer gähnt mitten im Latein, und der Vorsänger wirft ihm einen Blick zu, der in besseren Häusern eine Kündigung wäre.}
-
-{visits(rite) == 3: Der Gesang ist schneller, als er je an der Tür geklungen hat, und die Pausen sind fort. Was hier fertig werden soll, ist beinahe so weit.}
 
 {fear >= 11: Dein Herz schlägt inzwischen überall mit, in den Handgelenken, im Hals, hinter den Augen. Viel mehr davon hält es nicht.}
 
@@ -199,7 +191,7 @@ schwer zu sagen, wen von euch beiden das mehr verlegen macht.
 Du sprichst ihn aus. Er ist nicht schwer auszusprechen, was das Erstaunlichste
 an ihm ist.
 
-Der Gesang bricht ab. Der Hausherr wird sehr still. "Woher", sagt er, und
+{visits(alone) == 0: Der Gesang bricht ab.} Der Hausherr wird sehr still. "Woher", sagt er, und
 weiter kommt er nicht. Etwas verlässt ihn - Haltung, Farbe, Größe, in dieser
 Reihenfolge. Namen sind Verträge, hast du irgendwo gelesen oder gehört,
 vermutlich heute
@@ -210,7 +202,7 @@ Nacht. Seiner ist soeben gekündigt worden.
 Du versuchst, den Namen noch einmal zu denken. Er ist fort. Verbraucht wie
 ein Streichholz.
 
-{knows("KRUG-GEWUERZT"): Die Kutten, die noch stehen können, wanken zur Tür.}
+{knows("KRUG-GEWUERZT") and visits(alone) == 0: Die Kutten, die noch stehen können, wanken zur Tür.}
 
 -> break
 
@@ -273,7 +265,7 @@ das nie anders gewesen.
 
 {knows("HUND-FREUND"): Am Tor schließt sich dir der Hund an, ohne zu fragen, und sieht ebenfalls nicht zurück.}
 
-{uses("brandy") > 0: Im Flachmann schwappt noch ein Rest. Du hebst ihn im Gehen dem Haus entgegen und trinkst keinen Schluck davon. Nicht aus diesem Anlass.}
+{uses("brandy") > 0: Im Flachmann schwappt es noch. Du hebst ihn im Gehen dem Haus entgegen und trinkst keinen Schluck davon. Nicht aus diesem Anlass.}
 
 Zwei Meilen weiter kommt dir ein Milchwagen entgegen. Der Fahrer nimmt dich
 mit, sieht dich von der Seite an und fragt nichts. 
@@ -290,7 +282,7 @@ Gäste haben.
   Summe. Dein Herz hat in dieser Nacht mehr gearbeitet als in den Jahren
   davor, und irgendwann arbeitet es nicht mehr.
 { else }
-  Du hast in diesem Haus mehr verloren, als sich ersetzen lässt, und
+  Du hast in dieser Nacht mehr verloren, als sich ersetzen lässt, und
   irgendwann war es genug.
 
 Dein Abenteuer endet hier.

@@ -1,8 +1,6 @@
 # The Hall at Night {#hall}
 
-The hall is bigger when no one is waiting for you in it. The grandfather
-clock against the wall strikes once, although its face claims three o'clock.
-Perhaps it counts something other than hours.
+The hall is bigger when no one is waiting for you in it. {?: The grandfather clock against the wall strikes once, although its face claims three o'clock. Perhaps it counts something other than hours.|The grandfather clock still says three.}
 
 {~Somewhere above you a door closes softly.|The works of the grandfather clock audibly gather themselves and then do not strike after all.|Beneath your feet, very far down, chanting starts up.}
 
@@ -43,9 +41,7 @@ You pocket it. For whoever it may concern.
 
 # The Kitchen {#kitchen}
 
-Copper pans, a cold stove, and hanging from the hooks the things one expects
-in kitchens. The relief is considerable, and you briefly consider how low
-the bar has come to hang.
+Copper pans, a cold stove, and hanging from the hooks the things one expects in kitchens. {?: The relief is considerable, and you briefly consider how low the bar has come to hang.} {?: The relief of a moment ago does not come back.}
 
 {knows("PASTETE-WEG"): In the pantry: a shelf with preserving jars, carefully labelled. With first names.|In the pantry: a cold pie, immaculate, and a shelf with preserving jars, carefully labelled. With first names.}
 

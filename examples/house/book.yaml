@@ -1,6 +1,6 @@
 title: { de: Das Haus hinter dem Moor, en: The House Behind the Moor }
 blurb:
-  de: "Der Wagen bleibt im Regen liegen, und das einzige Licht weit und breit brennt hinter genau einem Fenster. Der Hausherr bittet zu Tisch, seltsame Geräusche aus dem Keller - und die Nacht wird lang. Ein Schauerspielbuch über Höflichkeit, Neugier und die Frage, wie viel Angst ein Herz aushält."
+  de: "Der Wagen bleibt im Regen liegen, und das einzige Licht weit und breit brennt hinter genau einem Fenster. Der Hausherr bittet zu Tisch, der Butler bittet, den Keller zu meiden - und die Nacht wird lang. Ein Schauerspielbuch über Höflichkeit, Neugier und die Frage, wie viel Angst ein Herz aushält."
   en: "The car dies in the rain, and the only light for miles burns behind exactly one window. The master invites you to dinner, the butler asks you to avoid the cellar - and the night runs long. A gothic gamebook about politeness, curiosity, and how much fear one heart can hold."
 author: Story Weaver
 version: 0.3.0
@@ -23,7 +23,10 @@ stats:
   fear:     { name: { de: Angst, en: Fear }, start: 0, max: 15 }
 
 inventory:
-  slots: 8
+  # Elf Dinge kann ein Weg durch das Haus einsammeln. Mit acht Plätzen
+  # scheiterte jedes take() ab dem neunten still, während der Text den Fund
+  # erzählte.
+  slots: 12
   start: [lantern, notebook]
 
 items:
@@ -80,8 +83,8 @@ enemies:
                       en: "{&The teeth find your forearm.|The weight of the leap takes your legs from under you.}" }
       combat.down:  { de: "Der Hund liegt still. Die Kette war an nichts befestigt, und jetzt hält ihn auch nichts mehr.",
                       en: "The hound lies still. The chain was fixed to nothing, and now nothing holds him either." }
-  servant: { name: { de: Der Diener, en: The Servant }, skill: 8, stamina: 9, flee_after: 4 }
-  cultist: { name: { de: Verschlafener Kultist, en: Drowsy Cultist }, skill: 6, stamina: 6, flee_after: 2 }
+  servant: { name: { de: Der Butler, en: The Butler }, skill: 8, stamina: 9, flee_after: 4 }
+  cultist: { name: { de: Die Kutte, en: The Robe }, skill: 6, stamina: 6, flee_after: 2 }
   thing:
     name: { de: Was im Keller wartet, en: What Waits in the Cellar }
     skill: 9
@@ -110,7 +113,7 @@ checks:
 
 strings:
   # Ein Name steht im Nominativ, also steht er als Subjekt im Satz: "Du
-  # triffst Der Diener." wäre kaputtes Deutsch, und keine Alternative
+  # triffst Der Butler." wäre kaputtes Deutsch, und keine Alternative
   # repariert das.
   combat.hit:   { de: "{enemy} {&steckt deinen Treffer ein|kommt zu spät hinter die Deckung|wankt unter deinem Schlag}.",
                  en: "{enemy} {&takes the blow|is slow behind its guard|reels under your strike}." }

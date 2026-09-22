@@ -1,8 +1,6 @@
 # Die Halle bei Nacht {#hall}
 
-Die Halle ist größer, wenn niemand darin auf dich wartet. Die Standuhr an der
-Wand schlägt einmal, obwohl ihr Zifferblatt drei Uhr behauptet. Vielleicht
-zählt sie etwas anderes als Stunden.
+Die Halle ist größer, wenn niemand darin auf dich wartet. {visits(hall) == 1: Die Standuhr an der Wand schlägt einmal, obwohl ihr Zifferblatt drei Uhr behauptet. Vielleicht zählt sie etwas anderes als Stunden.|Die Standuhr zeigt noch immer drei.}
 
 {~Irgendwo über dir schließt sich leise eine Tür.|Das Räderwerk der Standuhr holt hörbar Anlauf und schlägt dann doch nicht.|Unter deinen Füßen, sehr fern, setzt Gesang ein.}
 
@@ -50,9 +48,7 @@ es.
 
 # Die Küche {#kitchen}
 
-Kupferpfannen, ein kalter Herd, und an den Haken hängen Dinge, die man in
-Küchen erwartet. Die Erleichterung darüber ist beträchtlich, und du denkst
-kurz darüber nach, wie niedrig die Messlatte inzwischen hängt.
+Kupferpfannen, ein kalter Herd, und an den Haken hängen Dinge, die man in Küchen erwartet. {visits(kitchen) == 1: Die Erleichterung darüber ist beträchtlich, und du denkst kurz darüber nach, wie niedrig die Messlatte inzwischen hängt.} {knows("ZWOELFTES-GLAS"): Die Erleichterung von vorhin stellt sich nicht wieder ein.}
 
 {knows("PASTETE-WEG"): In der Speisekammer: ein Regal mit Einmachgläsern, sorgfältig beschriftet. Mit Vornamen.|In der Speisekammer: eine kalte Pastete, tadellos, und ein Regal mit Einmachgläsern, sorgfältig beschriftet. Mit Vornamen.}
 
@@ -74,7 +70,7 @@ Landwirtschaft, deren Rücken gemalt sind wie Kulissen. {knows("BRIEFOEFFNER-WEG
 
 * {knows("JOURNALIST")} [Das Tagebuch überfliegen, wie man Akten überfliegt](#study) Zwanzig Jahre Lokalteil: Du liest quer, von hinten nach vorn, und die Geschichte steht da wie immer zwischen den Spalten. Ankunftsdaten, seitenweise, ohne eine einzige Abreise. Und auf dem Vorsatzblatt ein Name, der nicht der ist, unter dem sich der Hausherr vorgestellt hat. Du sprichst ihn zweimal lautlos vor dich hin, bis er sitzt.
 
-  Der letzte Eintrag, in derselben ruhigen Handschrift: "Der Zwölfte kommt zu Fuß. Es ist alles vorbereitet." {.letter}
+  Der letzte Eintrag, in derselben ruhigen Handschrift: "Nummer zwölf kommt zu Fuß. Es ist alles vorbereitet." {.letter}
   ~ remember("WAHRER-NAME")
   ~ fear = fear + 1
 * {not knows("JOURNALIST")} [Das Tagebuch öffnen]()
@@ -86,7 +82,7 @@ Landwirtschaft, deren Rücken gemalt sind wie Kulissen. {knows("BRIEFOEFFNER-WEG
     Augen nur widerwillig loslassen. Du sprichst ihn zweimal lautlos vor
     dich hin, bis er sitzt.
 
-    Der letzte Eintrag, in derselben ruhigen Handschrift: "Der Zwölfte kommt zu Fuß. Es ist alles vorbereitet." {.letter}
+    Der letzte Eintrag, in derselben ruhigen Handschrift: "Nummer zwölf kommt zu Fuß. Es ist alles vorbereitet." {.letter}
     ~ remember("WAHRER-NAME")
     ~ fear = fear + 1
   { else }
