@@ -30,7 +30,7 @@ gekannt.
 * Panik
 
 Sie werden es mir anhängen. Sie brauchen einen Sündenbock, damit die Arbeit
-weitergehen kann. Ich biete mich an. Schwächer als die anderen.
+weitergehen kann. Ich bin ein naheliegendes Ziel. Schwächer als die anderen.
 
 * Rechnen
 
@@ -189,7 +189,7 @@ weil ich ihre Codes knacken kann."
 
 ## Ich habe Dinge getan {#admitted_to_something_ive_done_things}
 
-"Ich habe Dinge getan", beginne ich{?: hilflos}. "Dinge, die ich nicht tun
+"Ich habe Dinge getan", {?: beginne ich hilflos|beginne ich}. "Dinge, die ich nicht tun
 wollte. Ich habe versucht, es zu lassen. Aber am Ende fühlte sich der
 Widerstand an, als würde ich mir den eigenen Arm abtrennen."
 
@@ -309,8 +309,8 @@ Ihrer Seele.
 
 "Harris, ich..."
 
-"Lassen Sie das", unterbricht er. "Hier gibt es keine Geschworenen, die
-Sie umstimmen könnten. Und es ist keine Zeit.
+"Lassen Sie das", unterbricht er. "Hier sitzen keine Geschworenen, die
+Sie für sich einnehmen müssten. Und es ist keine Zeit.
 
 Also sagen Sie es mir, jetzt sofort. Wo ist es?"
 
@@ -528,11 +528,11 @@ nicht, was ich zu verlieren hätte."
 "Hooper ist in Baracke 3 und wird vom Captain befragt. Mal sehen, ob wir
 nicht irgendwie seine Aufmerksamkeit bekommen."
 
-Er klopft an die Tür nach dem Wachposten und gibt dem Mann eine knappe
+Er klopft an die Tür, um den Wachposten zu rufen, und gibt dem Mann eine knappe
 Anweisung. Der kehrt einen Moment später zurück, mit einem kalten Paar
 eiserner Handschellen.
 
-"Hände hoch", weist Harris an, und ich gehorche. Das Metall schließt sich
+"Hände her", weist Harris an, und ich gehorche. Das Metall schließt sich
 um meine Handgelenke wie eine Falle. Ich stehe auf und folge Harris
 bereitwillig durch die Tür.
 
@@ -698,7 +698,7 @@ wohin er geht."
 
 # Tür zugeschlagen und weg {#slam_door_shut_and_gone}
 
-Dann schlagen sie die Tür zu, und sie verriegelt.
+Dann schlagen sie die Tür zu und schließen ab.
 
 <>Wie soll ich von hier drinnen irgendetwas bewerkstelligen?
 
@@ -729,7 +729,7 @@ Dann wuchte ich den Eimer hoch - in Handschellen ist das wirklich eine
 ziemlich fummelige Angelegenheit - und hole kräftig aus, wobei ich mir
 vorstelle, auf der anderen Seite wäre Harris' Gesicht.
 
-Dann hebe ich {?: den Schuh, an der Spitze gepackt, |den Arm nach hinten,}
+Dann hebe ich {?: den Schuh, an der Spitze gepackt,|den Arm nach hinten}
 und hole kräftig aus, wobei ich mir vorstelle, auf der anderen Seite wäre
 Harris' Gesicht.
 
@@ -856,8 +856,8 @@ Schatten, der ihm beim Aufwachen ins Gesicht starrt. Was wäre natürlicher,
 als aufzustehen, herauszukommen und nachzusehen, was da über Nacht auf ihn
 gefallen ist?
 
-Es ist das Werk eines Augenblicks. In der Schule war ich einmal eine
-exzellente Wurfkraft der zweiten Cricket-Elf. Diesmal werfe ich natürlich von
+Es ist das Werk eines Augenblicks. In der Schule war ich einmal ein
+exzellenter Bowler der zweiten Cricket-Elf. Diesmal werfe ich natürlich von
 unten, aber ich setze das entscheidende fehlende Bauteil trotzdem genau
 dorthin, wo ich es haben will.
 
@@ -1002,7 +1002,7 @@ Ich rühre sie nicht an. Niemand draußen soll denken, ich versuche zu fliehen.
 
 Es gibt nichts, womit ich die Zeit beschleunigen könnte.
 
-Die Nacht geht ihr eigenes Tempo. Bis zum Morgen, nehme ich an, werde ich
+Die Nacht hat ihr eigenes Tempo. Bis zum Morgen, nehme ich an, werde ich
 mein Schicksal kennen.
 
 * Warten
@@ -1116,7 +1116,7 @@ doch entdeckt, und Harris' Männer werden sich auf ihn gestürzt haben, und die
 Geschichte von seinem Geständnis ist nur eine List, um mich zu prüfen.
 
 Und wenn das Bauteil noch da ist - nun. Für meinen Kontaktmann ist es in
-einer Woche genauso wertvoll, und seine Frist zum 31. ist noch nicht heran.
+einer Woche genauso wertvoll, und seine Frist bis zum 31. ist noch nicht abgelaufen.
 
 * Warten
 
@@ -1188,9 +1188,9 @@ dritt sind."
 
 Nichts also, außer so zu tun, als würde kein Spiel gespielt. Ich werde ein
 Bad nehmen, dann wie gewohnt die Arbeit aufnehmen. Ich habe eine Woche, um
-etwas zu finden, das ich meinem Erpresser geben kann{?: - oder ihm nichts zu
+etwas zu finden, das ich meinem Erpresser {?: geben kann - oder ihm nichts zu
 geben: Meine Vorgesetzten wissen jetzt offenbar ohnehin von meinen
-Verfehlungen}.
+Verfehlungen|geben kann}.
 
 * Kooperieren
 
@@ -1345,7 +1345,7 @@ in einem Hohlblockstein, der den linken hinteren Pfosten von Baracke 2
 trägt. Ich habe es dort hineingelegt, weil ich mit einer Durchsuchung
 rechnete. Ich wollte es {?: an Hooper weitergeben|verschwinden lassen},
 sobald sich die Aufregung gelegt hätte. Es war wohl töricht zu glauben, dass
-sie das würde."
+sie sich legen würde."
 
 ## Harris glaubt es {#reveal_location_of_component_harris_believes}
 
@@ -1532,7 +1532,7 @@ Ich warte darauf, dass er spricht.
 
 # Hier in Bletchley, Ablenkung schon gut {#here_at_bletchley_diversion_fine}
 
-"Ich könnte nicht mehr zustimmen." Und dann rückt er damit heraus, mit einer
+"Da bin ich ganz Ihrer Meinung." Und dann rückt er damit heraus, mit einer
 Beschuldigung.
 
 # Harris verlangt das Bauteil, Zusammenführung {#harris_demands_component_join}
@@ -1543,7 +1543,7 @@ Beschuldigung.
 
 * Hinhalten
 
-"Ich weiß nichts davon." Meine Stimme zittert{?: vor Wut|; ich bin es nicht
+"Ich weiß nichts davon." Meine Stimme {?: zittert vor Wut|zittert; ich bin es nicht
 gewohnt, Männern mit Pistolen im Halfter gegenüberzustehen}.
 
 * Lügen
@@ -1553,7 +1553,7 @@ gewohnt, Männern mit Pistolen im Halfter gegenüberzustehen}.
 "Ich weiß nicht, was Ihnen das Recht gibt, sich auf mich einzuschießen.
 {?: Ich verlange einen Rechtsbeistand.|Ich will einen Rechtsbeistand.}"
 
-"Es ist Krieg," antwortet Harris. "Und bei Gott, wenn ich Sie erschießen
+"Es ist Krieg", antwortet Harris. "Und bei Gott, wenn ich Sie erschießen
 muss, um das Bauteil wiederzubeschaffen, dann tue ich es. Verstanden?" Er
 zeigt auf den Becher,
 
@@ -1604,7 +1604,7 @@ nach.
 Zaun an meinen Kontakt weitergereicht, noch bevor sein Fehlen entdeckt war.
 Alles andere wäre Idiotie gewesen. Es ist längst fort, fürchte ich."
 
-"Sie Narr, Manning," flucht Harris und kommt rasch auf die Füße. "Sie
+"Sie Narr, Manning", flucht Harris und kommt rasch auf die Füße. "Sie
 ausgemachter Narr. Glauben Sie, unter Hitler wird es Ihnen besser gehen? Es
 sind Leute wie Sie, die uns alle umbringen werden. Leute, zu schwach, zu
 verzagt im Herzen, um aufzustehen und Verantwortung für die Welt zu
@@ -1613,10 +1613,10 @@ Ihren kleinen kindischen Spielereien."
 
 * Widerworte geben
 
-"Also wirklich, Commander," erwidere ich. "Das klingt beinahe, als wollten
+"Also wirklich, Commander", erwidere ich. "Das klingt beinahe, als wollten
 Sie mich übers Knie legen."
 
-"Um Himmels willen," stößt er voller Abscheu hervor, dann rauscht er aus
+"Um Himmels willen", stößt er voller Abscheu hervor, dann rauscht er aus
 dem Zimmer.
 
 * Schweigen
@@ -1628,7 +1628,7 @@ denke, als ich muss. Was nützt es, über ein Problem nachzugrübeln, das sich
 nicht lösen lässt? Es ist genau unsere Fähigkeit, solche endlosen Spiralen
 zu vermeiden, die uns zu Menschen macht und nicht zu Maschinen.
 
-"Gott sei Ihrer Seele gnädig," sagt Harris schließlich, während er aufsteht
+"Gott sei Ihrer Seele gnädig", sagt Harris schließlich, während er aufsteht
 und zur Tür geht. "Ich fürchte, sonst wird es niemand sein."
 
 # Ich traf einen jungen Mann, nein {#i_met_a_young_man_nope}
@@ -1649,7 +1649,7 @@ Gespräch."
 hohe Offiziere für alle?"
 
 "Collins war draußen, als es geschah, und Peterson kommt in diesem Stuhl
-von ihm nicht um die Maschine herum," antwortet Harris. "Bleiben Sie und
+von ihm nicht um die Maschine herum", antwortet Harris. "Bleiben Sie und
 Hooper.
 
 * "Dann wissen Sie, dass ich recht habe."
@@ -1662,10 +1662,10 @@ Landes in den Händen hält.
 
 # Harris bringt dich zu Hooper, Zusammenführung {#harris_takes_you_to_hooper_join}
 
-Der Captain kommt heraus und zieht die Tür hinter sich zu. "Was soll das?"
+Der Captain kommt heraus und zieht die Tür hinter sich zu. "Was soll das?",
 fragt er. "Ein Geständnis? Einfach so?"
 
-"Nein," räumt der Commander leise ein. "Leider nicht. Eher ein Plan. Die
+"Nein", räumt der Commander leise ein. "Leider nicht. Eher ein Plan. Die
 Idee ist, Hooper laufen zu lassen und zu sehen, was er tut. Wenn er glaubt,
 wir hätten Manning hier in Eisen, wird er versuchen, das Bauteil
 beiseitezuschaffen."
@@ -1677,29 +1677,29 @@ beiseitezuschaffen."
 Der Captain mustert mich einen Moment, als wäre ich eine Art merkwürdiges
 Insekt.
 
-"Manchmal denke ich, Sie Leute sind Zauberer," bemerkt er. "Und manchmal
+"Manchmal denke ich, Sie Leute sind Zauberer", bemerkt er. "Und manchmal
 wirken Sie eher wie Hexen. Also gut."
 
 Damit öffnet er die Tür zur Baracke und geht wieder hinein. Der Commander
 nutzt den Moment, um mich grob vorwärtszustoßen.
 
-"Und was sollte das ganze Geschrei?" zischt er mir ins Ohr, während wir auf
+"Und was sollte das ganze Geschrei?", zischt er mir ins Ohr, während wir auf
 die Unterkunft zugehen. "Wollen Sie irgendetwas abziehen? Oder mich nur
 inkompetent aussehen lassen?"
 
-"Dieser Plan von Ihnen sollte besser aufgehen," zischt er mir ins Ohr.
+"Dieser Plan von Ihnen sollte besser aufgehen", zischt er mir ins Ohr.
 "Sonst lässt der Captain demnächst Männer auf *mich* ansetzen, um zu sehen,
 wohin ich samstags gehe."
 
 * Beschwichtigen
 
-"Das wird er. Hooper ist in Panik," antworte ich und hoffe, dass ich
+"Das wird er. Hooper ist in Panik", antworte ich und hoffe, dass ich
 zuversichtlicher klinge, als ich mich fühle.
 
-"Ich sorge nur für ein wenig Dramatik," sage ich zuversichtlich. "Das
+"Ich sorge nur für ein wenig Dramatik", sage ich zuversichtlich. "Das
 können Sie doch sicher verstehen."
 
-"Ich denke, wir hatten heute schon genug Dramatik," erwidert Harris.
+"Ich denke, wir hatten heute schon genug Dramatik", erwidert Harris.
 "Hoffen wir auf einen sauberen Abschuss."
 
 * Abwiegeln
@@ -1709,14 +1709,14 @@ eine Beförderung."
 
 "Ich versuche nichts weiter, als meinen Hals zu retten."
 
-"Hoffen wir, dass es gut ausgeht," stimmt Harris düster zu.
+"Hoffen wir, dass es gut ausgeht", stimmt Harris düster zu.
 
 * Ausweichen
 
 "Wir sind noch in Hörweite, falls sie Hooper gehen lassen. Bringen Sie uns
 lieber erst hinein, dann können wir reden, wenn es sein muss."
 
-"Ich habe Ihre Stimme für heute genug gehört," erwidert Harris grimmig.<>
+"Ich habe Ihre Stimme für heute genug gehört", erwidert Harris grimmig.<>
 
 * Schweigen
 
@@ -1743,7 +1743,7 @@ für den Bruchteil einer Sekunde schaudern.
 
 * "Zwei Worte: Durcheinander, ohne dass eines fehlt!"
 
-"Zwei Worte: Durcheinander, ohne dass eines fehlt!" rufe ich lachend. Es
+"Zwei Worte: Durcheinander, ohne dass eines fehlt!", rufe ich lachend. Es
 ist nicht der beste Hinweis, kaum der Times würdig, aber er muss genügen.
 
 # In Hoopers Baracke, Zusammenführung {#inside_hoopers_hut_join}
@@ -1761,7 +1761,7 @@ Rat. Baracke 2."
 * Am Schlüsselloch lauschen
 
 Ich lege mein Ohr ans Schlüsselloch, aber jetzt ist nichts zu hören.
-Vermutlich steht natürlich noch ein Posten draußen, aber sie halten den
+Vermutlich steht natürlich noch ein Posten draußen, aber er hält den
 Mund.
 
 * Das Fenster versuchen
@@ -1826,8 +1826,8 @@ meine Hand ist.
 Ich schiebe das Bauteil ins Zelt, ziehe den Reißverschluss wieder zu und
 verschwinde rasch in die Schatten. Es dauert ein paar Minuten, bis mein
 Atem ruhiger wird und mein Herz zu hämmern aufhört, aber ich sehe keine
-andere Bewegung. Falls irgendjemand Hoopers Zelt beobachtet, dann schlafen
-sie auf ihren Posten.
+andere Bewegung. Falls irgendjemand Hoopers Zelt beobachtet, dann schläft
+er auf seinem Posten.
 
 * Nein, auf anderem Weg
 
@@ -1873,18 +1873,18 @@ gesteckt?"
 
 Ich bleibe still, höre zu, unsicher, wohin das führen wird.
 
-"Falls ich mich nicht deutlich genug ausdrücke," fährt Harris fort, "<>
+"Falls ich mich nicht deutlich genug ausdrücke", fährt Harris fort, "<>
 
 # Die Nacht vergeht, sehr witzig {#night_passes_droll}
 
-"Sehr witzig," erwidert er. "Lassen Sie mich erzählen, was heute Morgen
+"Sehr witzig", erwidert er. "Lassen Sie mich erzählen, was heute Morgen
 geschehen ist. Das wird Ihnen das Lächeln vom Gesicht wischen.
 
 # Die Nacht bricht herein, Zusammenführung {#night_falls_join}
 
 # Die Nacht bricht herein, Zuversicht {#night_falls_optimism}
 
-"Ich freue mich auf ein langes Bad," antworte ich. "Und darauf, wieder an
+"Ich freue mich auf ein langes Bad", antworte ich. "Und darauf, wieder an
 die Arbeit zu gehen."
 
 # Auf zu meinem Quartier, frei, Zusammenführung {#head_for_my_dorm_free_join}
@@ -1910,16 +1910,16 @@ Selbstmord. Schließlich: Wenn Hooper meinen Hinweis {?: befolgt|verstanden}
 hat, wird er ihn ihnen erklärt haben, um seinen Hals zu retten. Sie werden
 ihm nicht glauben - aber sie werden ihm auch nicht ganz misstrauen. Wir
 stecken jetzt in einem Kreislauf, er und ich, aus Halbwahrheit und
-Wahrscheinlichkeit. Keiner von uns kann dem anderen die Schuld ganz
-zuschieben.
+Wahrscheinlichkeit. Es gibt nichts, womit einer von uns dem
+anderen die ganze Schuld zuschieben könnte.
 
 * Mich normal verhalten
 
-Aber daran ist nichts zu ändern.
+Aber dagegen lässt sich nichts tun.
 
 # Auf zu meinem Quartier, frei, Quince {#head_for_my_dorm_free_quince}
 
-"Quince hat heute Morgen erzählt, sein Großvater sei angeblich Deutscher
+"Quince hat heute Morgen erzählt, Hoopers Großvater sei angeblich Deutscher
 gewesen. Vielleicht war es also zu erwarten. Sehen wir uns dort?"
 
 # Ende Rückkehr zum Alltag Anschluss {#ending_return_to_normal_join}
@@ -1932,8 +1932,8 @@ Zeit, dass ich ein Problem angehe, das ich lösen kann.
 
 # Zum Versteck des Bauteils Anschluss {#go_to_where_component_is_hidden_join}
 
-"{?: Dame auf Turm zwei|Ein Durcheinander ohne das eine, was auch immer es
-war}", erklärt er. "Ich wäre nie darauf gekommen, aber Hooper schon. Hat es
+"{?: Dame auf Turm zwei|Durcheinander, ohne dass eines fehlt, oder wie
+das hieß}", erklärt er. "Ich wäre nie darauf gekommen, aber Hooper schon. Hat es
 uns erklärt, gleich nachdem wir ihn bei dem ertappt haben, was Sie gerade
 tun. Wir wussten nicht recht, was wir glauben sollten, aber das haben Sie
 jetzt offenbar für uns geklärt."
@@ -1977,8 +1977,8 @@ verraten, wo er suchen soll}."
 
 # Zum Versteck des Bauteils Nachsehen {#go_to_where_component_is_hidden_check}
 
-Keine Zeit zu verlieren. Ich lasse mich auf die Knie fallen und sehe hinter
-dem Betonblock nach. Und tatsächlich: Da ist nichts. *Hooper hat
+Keine Zeit zu verlieren. Ich lasse mich auf die Knie fallen und sehe im
+Hohlblockstein nach. Und tatsächlich: Da ist nichts. *Hooper hat
 angebissen.*
 
 Plötzlich eine Bewegung hinter mir. Ich blicke auf und sehe zuerst eine
@@ -2120,7 +2120,7 @@ dass, wenn das alles vorbei ist, ich den Ritterschlag bekomme und er..."
 
 "Niemand bekommt einen Ritterschlag, wenn die Deutschen an Land gehen",
 antwortet Harris scharf. Er wirft einen raschen Blick zur Tür der Baracke,
-ob der Riegel noch vorliegt, dann fährt er eher im Murmeln fort: "Weder Sie
+ob der Riegel noch vorgelegt ist, dann fährt er eher im Murmeln fort: "Weder Sie
 noch Hooper. Und jetzt antworten Sie mir."
 
 Zum ersten Mal, seit die Tür ins Schloss fiel, frage ich mich, was mir
@@ -2216,7 +2216,7 @@ Eisiges Schweigen. {?: Er wird meiner Ausflüchte müde.}
 * Mutmaßen
 
 "Nun denn", antworte ich nervös. "Was würde er tun? Entweder es sofort
-loswerden - oder, falls das nicht ginge, was es vermutlich nicht würde, weil
+loswerden - oder, falls das nicht ginge, was vermutlich nicht der Fall wäre, weil
 er sich erst mit seinen Kontaktleuten abstimmen müsste - also würde er es
 höchstwahrscheinlich irgendwo verstecken und warten, bis Sie mir den Strick
 um den Hals gelegt haben und er sich sicher sein kann."
@@ -2285,7 +2285,7 @@ Bauteil versteckt hat, und sein Spiel ist aus."
 Harris nickt langsam und kaut auf dem Gedanken herum. Es ist nicht einmal
 ein schlechter Plan - nur hat Hooper das Bauteil natürlich *nicht* versteckt
 und wird sie nirgendwohin führen. Aber das ist ein Problem, das ich
-vielleicht lösen kann, sobald ich hier draußen bin; und sobald sie zu
+vielleicht lösen kann, sobald ich hier heraus bin; und sobald sie zu
 beschäftigt damit sind, Hooper von Baracke zu Baracke auf den Fersen zu
 bleiben.
 
@@ -2484,7 +2484,7 @@ gewartet - vielleicht wäre ich noch entkommen. Aber wie weit?
 
 Man schiebt mich in eine der Baracken. Kein Platz zum Schlafen, aber an
 meiner Bequemlichkeit ist ihnen nicht mehr gelegen. Harris kommt herein, mit
-dem Hauptmann.
+dem Captain.
 
 "So", bemerkt Harris. "Sieht aus, als hätte Ihre kleine Falle funktioniert.
 Nur hat sie gezeigt, wer *Sie* wirklich sind."
@@ -2510,7 +2510,7 @@ ihn vollends belastet. Er ist zu klug, verstehen Sie..."
 noch immer nicht, und ohne das sehe ich nicht, was Sie zu beweisen hoffen."
 
 "Schweigen Sie. Wir wissen alles über Sie und Ihre schmutzigen Affären." Der
-Hauptmann verzieht die Lippe. "Wissen Sie nicht, dass Krieg ist? Wissen Sie,
+Captain verzieht die Lippe. "Wissen Sie nicht, dass Krieg ist? Wissen Sie,
 wohin man Sie geschickt hätte, wäre da nicht dieser Verstand von Ihnen?
 Meinen Sie nicht, Sie schulden es Ihrem Land, ihn etwas mehr zu gebrauchen?"
 
@@ -2685,7 +2685,7 @@ mir.}
 ich werde nicht am Traitor's Gate hängen. Hooper war es, der dem Jungen von
 unserer Arbeit erzählt hat. Hooper hat den Jungen auf mich angesetzt. {?:
 Ich hätte es natürlich merken müssen. So etwas geschieht nicht durch Zufall.
-Ich war ein Narr zu glauben, es könnte.} Und dann, als er mich in der Hand
+Ich war ein Narr zu glauben, es könnte Zufall sein.} Und dann, als er mich in der Hand
 hatte, verlangte er, dass ich das Teil aus der Maschine stehle."
 
 "Was Sie getan haben." Harris beugt sich vor. "Und dann? Sie haben es noch?
@@ -2732,7 +2732,7 @@ beliebt."
 
 * "Ich begehe keinen Verrat."
 
-"Ich begehe keinen Verrat", antworte ich{?: zackig|, mit bebender Stimme.
+"Ich begehe keinen Verrat", {?: antworte ich zackig.|antworte ich mit bebender Stimme.
 "Um Himmels willen!"}
 
 * Lügen
@@ -3029,9 +3029,9 @@ Verderben führt. Aber wie anstellen?
 Harris lächelt schief. "Dann wissen wir, dass es geschwindelt ist. Da haben
 wir schon nachgesehen.
 
-* "Oder in den Fluss geworfen werden."
+* "Oder es landet im Fluss."
 
-"Oder in den Fluss geworfen werden."
+"Oder es landet im Fluss."
 
 "Hmm." Harris kaut nachdenklich auf seinem Schnurrbart. "Nun, das brächte
 uns in die Klemme, denn dann wüssten wir es nie mit Sicherheit. Wir müssten
