@@ -114,6 +114,42 @@ test('simulate --coverage meldet, was nie auf der Seite stand', () => {
   assert.equal(r.coverage.unseen[0].conditional, true);
 });
 
+test('simulate --coverage flieht auch einmal, sonst bliebe hinter jeder Flucht alles ungesehen', () => {
+  // Der Leser kämpfte früher immer. Was hinter einem `flee`-Ausgang steht,
+  // kam damit nie auf die Seite, und der Bericht schob das dem Buch zu. Die
+  // Ratte hier ist nicht zu besiegen; nur wer flieht, sieht die Wahl in B.
+  const { story } = compile(`# A {#a}
+
+!combat rat
+  win  -> END
+  flee [Run](#b) You go.
+
+# B {#b}
+
++ [Weiter](#c)
+
+# C {#c}
+
+-> END
+`, {
+    frontmatter: `---
+title: Flight
+start: a
+stats:
+  stamina: { start: 20 }
+combat:
+  attack: "roll(1,6)"
+  damage: "1"
+enemies:
+  rat: { name: Rat, skill: 99, stamina: 99, flee_after: 0 }
+---
+`,
+  });
+  const r = simulate(story, { runs: 10, coverage: true });
+  assert.equal(r.coverage.seen, r.coverage.choices);
+  assert.ok(r.endings.c > 0, 'a run fled and reached C');
+});
+
 test('ohne --coverage lenkt nichts den Leser, damit die Enden vergleichbar bleiben', () => {
   // Die Abdeckungsmessung bevorzugt ueber Partien hinweg das Ungesehene. Das
   // verschiebt die Verteilung der Enden, an der ein Buch ausbalanciert wird,

@@ -300,7 +300,25 @@ export function walk(s, { seed = 1, maxSteps = 200, host = null, gesehen = null 
     // The policy for how the counters and `elapsed` advance per turn (12.4):
     // without it a book's scheduled content is never reached at all.
     if (host) { s.advance(host); if (s.current.ended) break; }
-    if (s.combat) { s.attack(); continue; }
+    if (s.combat) {
+      // A reader who always fights never sees what lies behind a `flee`
+      // exit, and coverage would list it as unseen when only the walker
+      // never ran. So once flight is open, each fight decides once per run,
+      // steered by frequency like the choices below. Without `coverage`
+      // the walker keeps fighting, so the endings stay comparable.
+      const flucht = `${s.current.node}#flee`;
+      if (gesehen && s.combat.canFlee && !taken.has(flucht)) {
+        taken.add(flucht);
+        const bleiben = `${s.current.node}#fight`;
+        const weg = gesehen.genommen.get(flucht) ?? 0;
+        const stehen = gesehen.genommen.get(bleiben) ?? 0;
+        const fliehen = weg <= stehen;
+        gesehen.genommen.set(fliehen ? flucht : bleiben, (fliehen ? weg : stehen) + 1);
+        if (fliehen) { s.flee(); continue; }
+      }
+      s.attack();
+      continue;
+    }
     const choices = s.current.choices;
     if (choices.length === 0) return { ended: false, deadEnd: true, steps };
     // `s.choices` traegt die Kennung, die der Compiler vergeben hat;

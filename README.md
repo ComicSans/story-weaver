@@ -305,7 +305,9 @@ L013 says so.
 
 **In the end the numbers decide, not the feel.** `simulate` shows how the
 endings distribute. `simulate --coverage` names every choice that no run ever
-put on the page. `lint --strict` has to stay clean.
+put on the page; to get there its reader also runs from a fight now and then,
+since what lies behind a `flee` exit is otherwise never seen. `lint --strict`
+has to stay clean.
 
 What the linter reports is a find, not a verdict. A choice behind a
 multi-step plan turns up in the coverage list, and that is as it should be.
