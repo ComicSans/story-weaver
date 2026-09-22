@@ -39,7 +39,10 @@ function main(argv) {
   if (command === 'mcp') {
     return serveMcp().then(() => 0);
   }
-  if (!command || !entry || ['-h', '--help'].includes(command)) {
+  // `simulate --help` used to reach the compiler and die opening a file
+  // called --help; asking for help after the command is still asking.
+  const help = ['-h', '--help'].includes(command) || ['-h', '--help'].includes(entry);
+  if (!command || !entry || help) {
     process.stdout.write([
       'usage:',
       '  story-weaver build    <entry> [--out FILE] [--strict] [--quiet]',
@@ -48,10 +51,11 @@ function main(argv) {
       '  story-weaver bundle   <entry> --out DIR [--strict] [--minify]',
       '  story-weaver play     <entry> [--seed N] [--lang xx] [--script 1,2,a] [--host k=v] [--json]',
       '  story-weaver simulate <entry> [--runs N] [--host k=v] [--coverage] [--json]',
+      '  story-weaver import   <file.ink> [--out FILE] [--title T] [--author A] [--notice FILE]',
       '  story-weaver mcp',
       '',
     ].join('\n'));
-    return command ? 1 : 0;
+    return command && !help ? 1 : 0;
   }
 
   const flags = new Set(rest.filter((a) => a.startsWith('--')));
