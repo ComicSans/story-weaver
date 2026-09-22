@@ -197,15 +197,15 @@ the latch comes.}
 
 Under the ceiling a bulb burns behind wired glass. {It makes the cellar a
 workshop as much as a store - on the plinth in the middle stands the
-generator, beside it the workbench, the oil drum against the wall, the
-petrol can on the shelf. On the seaward side sit two heavy bulkhead doors
+generator, beside it the workbench, the oil drum against the wall, and the
+petrol can. On the seaward side sit two heavy bulkhead doors
 one behind the other, with a short passage between them - that is how the
 supply crates come in from the boat at high water, instead of over the
 stair.|}
 
 The glow of the oil lantern reaches as far as it reaches. {It fetches things
 out of the dark one by one: the plinth with the generator, the workbench,
-the oil drum, the can on the shelf. Last, on the seaward side, the two
+the oil drum, the can. Last, on the seaward side, the two
 bulkhead doors of the crate lock, one behind the other.|}
 
 Down here the night is complete. {What the cellar has, it shows to your
@@ -282,7 +282,7 @@ round, once, twice.
 It catches, runs a few beats and then gets its rest again, because you shut
 it down: as long as the sea cable delivers, there is no reason to broach the
 petrol. It was worth a test run all the same. {?: The line drew air audibly
-as it ran, and oil has seeped out at the union. Like that it will not run an
+as it ran, and petrol has seeped out at the union. Like that it will not run an
 hour at a stretch.|The line holds tight; nothing shakes there any more.}
 {?: And the tank rings hollow when you knock on it - what is in there will
 not carry a night.|The tank is full; a whole night lies in there.}
@@ -292,14 +292,14 @@ workhorse. Above the plinth the bulb trembles and grows bright. {?: And up
 top, you know, a lever sits at ON.|The tower has power again.}
 
 It catches - and dies after a few beats. The line audibly draws air, the
-loose union dribbles oil onto the plinth, and the tank rings hollow when you
+loose union dribbles petrol onto the plinth, and the tank rings hollow when you
 knock on it. First seal, then fill, then once more from the start.
 
-It catches, picks up briefly and then drowns. The tank rings hollow down to
+It catches, picks up briefly and then cuts out. The tank rings hollow down to
 the bottom: that was the last swallow, and it will not pay for a night.
 
 It catches and dies after a few beats: the line draws air, the loose union
-dribbles oil onto the plinth. Like that it will not last a quarter of an
+dribbles petrol onto the plinth. Like that it will not last a quarter of an
 hour, and the night is longer.
 
 # Out of the Cellar {#aus_dem_keller}
@@ -337,8 +337,8 @@ Rung by rung, with light and free hands. At the bottom you resolve not to do
 that again in wind.
 
 {?: At half height a gust takes the weight off your feet. You hold on until
-it gives it back.|Once your hand grips into nothing, but your foot finds
-what your eyes cannot see.}
+it gives it back.|Once your hand finds no hold, and for a breath only your
+feet carry you, until it is back.}
 
 Twice everything hangs on one hand: once when the gust comes, and once when
 your heel tips off the wet rung. Twice it is enough, only just. At the
@@ -349,6 +349,10 @@ three times the answer is just barely good enough. That is something it does
 not forgive twice.
 
 # At the Foot of the Ladder {#leiterfuss}
+
+At the bottom you duck out of the wind. The weather door of the cellar stands
+open a finger's width and will not move; the water stands behind it. That
+leaves the tower door, twenty paces along the wall.
 
 At the bottom you duck out of the wind, and the weather door of the cellar
 is the next latch your hand finds.
@@ -373,8 +377,9 @@ the storm comes, the jetty will belong to it first.}
 * Wait, in case something comes after all
 
 You wait half an hour against your better judgement. Wind and the odd
-seabird keep you company. The view of the sunset is picturesque and rewards
-your waiting.
+seabird keep you company. {?: Of the evening only a pale strip is
+left beneath the cloud bank, and that too goes while you stand there.|The
+view of the sunset is picturesque and rewards your waiting.}
 
 + Back across the bar
 
@@ -408,6 +413,10 @@ the crossing, and the tower holds off the sea well enough on its own. - You
 wake because the tower has a different note, deeper, low in the masonry. It
 is pitch dark, and something is missing from the room: the hum of the
 ceiling lamp. The power.
+
+You lie down, but from across the way comes the drone of the generator, and
+over the bar the beam runs its rounds. No sleep comes of it. After a while
+you get up again.
 
 # Waking {#erwachen}
 

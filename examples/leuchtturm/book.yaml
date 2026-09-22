@@ -17,8 +17,9 @@ stats:
   # Minuten seit dem Absetzen. Jede Wahl zahlt darauf ein; was die Welt
   # draußen an Sekunden hereinreicht, rechnet das Ereignis `echtzeit` um.
   # Die Schwellen des Buchs - Sturm, Stromausfall, Flut - hängen nur an
-  # dieser Uhr, nie am Wetter von draußen: dieselbe Handlungsfolge ergibt
-  # immer dasselbe Buch.
+  # dieser Uhr, nie am Wetter von draußen: ohne Host-Zeit fallen sie bei
+  # derselben Handlungsfolge immer gleich. Mit ihr rückt `echtzeit` die Uhr
+  # vor, und ab Minute 630 führt jeder Knoten mit Wahlen in den Morgen.
   zeit:   { name: { de: Minuten, en: Minutes }, start: 0 }
   wasser: { name: { de: Wasser im Keller, en: Water in the Cellar }, start: 0 }
   # Gewürfelt wird in diesem Buch an genau einer Stelle, der Außenleiter,

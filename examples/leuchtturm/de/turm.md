@@ -1,5 +1,10 @@
 # Auf der Sandbank {#ankunft}
 
+{ tag and lampe }
+  -> morgen
+{ tag }
+  -> grauermorgen
+
 ~ im_keller = 0
 
 {!Das Boot dreht ab, kaum dass dein Seesack im Sand liegt. "Morgen früh",
@@ -42,6 +47,11 @@ Oben siehst du die große Lampe: dunkel. Sie ist dein Auftrag: Wenn der Sturm ko
   ~ zeit += 25
 
 # Der Arbeitsraum {#arbeitsraum}
+
+{ tag and lampe }
+  -> morgen
+{ tag }
+  -> grauermorgen
 
 ~ im_keller = 0
 
@@ -132,6 +142,11 @@ solange kein Strom kommt.}
 
 # Vor der Tür {#vortreten}
 
+{ tag and lampe }
+  -> morgen
+{ tag }
+  -> grauermorgen
+
 ~ zeit += 5
 
 { not sturm }
@@ -147,6 +162,11 @@ solange kein Strom kommt.}
   -> arbeitsraum
 
 # Die Lampenkammer {#kammer}
+
+{ tag and lampe }
+  -> morgen
+{ tag }
+  -> grauermorgen
 
 ~ im_keller = 0
 
@@ -222,19 +242,24 @@ tot.}
 
 # Der Maschinenkeller {#keller}
 
+{ tag and lampe }
+  -> morgen
+{ tag }
+  -> grauermorgen
+
 ~ im_keller = 1
 
 { netz == 1 or generator == 1 }
   Unter der Decke brennt eine Birne hinter Drahtglas. {Sie macht aus dem
   Keller einen Arbeits- und Lagerraum: Auf dem Podest in der Mitte steht
-  der Generator, daneben die Werkbank, das Ölfass an der Wand, im Regal
+  der Generator, daneben die Werkbank, das Ölfass an der Wand, dazu
   der Benzinkanister. Seeseitig sitzen zwei schwere Schotttüren
   hintereinander, mit einem kurzen Gang dazwischen - dadurch kommen bei
   Hochwasser die Vorratskisten vom Boot herein, statt über die Stiege.|}
 { handlicht() }
   Der Schein der Öl-Laterne reicht so weit, wie er reicht. {Er holt die
   Dinge einzeln aus dem Dunkel: das Podest mit dem Generator, die
-  Werkbank, das Ölfass, im Regal den Kanister. Zuletzt, seeseitig, die
+  Werkbank, das Ölfass, den Kanister. Zuletzt, seeseitig, die
   beiden Schotttüren der Kistenschleuse, eine hinter der anderen.|}
 { else }
   Hier unten ist die Nacht vollständig. {Was der Keller hat, zeigt er
@@ -286,7 +311,7 @@ Seekabel liefert; angebrochen wird es erst, wenn der Strom fällt.}
   ~ zeit += 10 + (dunkel and not handlicht()) * 5
   ~ schott = 1
 * {bereit == 0 and gerichtet == 0 and wasser <= 2 and traglast() == 0} [Werkzeugschlüssel und Dichtband einstecken](#keller)
-  Beides ist klein, der Schlüssel erstaunlich schwer. Deine beide Hände sind vergeben 
+  Beides ist klein, der Schlüssel erstaunlich schwer. Deine beiden Hände sind vergeben 
   - für die Öl-Laterne bleibt keine frei.
   ~ zeit += 5
   ~ take("schluessel")
@@ -323,7 +348,7 @@ herum, einmal, zweimal.
   weil du ihn abstellst: Solange das Seekabel liefert, gibt es keinen
   Grund, das Benzin anzubrechen. Ein Probelauf war es trotzdem wert.
   {gerichtet == 0: Die Leitung hat dabei hörbar Luft gezogen, und an
-  der Verschraubung ist Öl ausgetreten. So läuft er keine Stunde am
+  der Verschraubung ist Benzin ausgetreten. So läuft er keine Stunde am
   Stück.|Die Leitung hält dicht; da wackelt nichts mehr.} {tank == 0:
   Und der Tank klingt hohl, wenn man ihn klopft - was drin ist, trägt
   keine Nacht.|Der Tank ist voll; darin liegt eine ganze Nacht.}
@@ -337,18 +362,18 @@ herum, einmal, zweimal.
   -> keller
 { gerichtet == 0 and tank == 0 }
   Er springt an - und stirbt nach wenigen Takten. Die Leitung zieht
-  hörbar Luft, die lose Verschraubung sabbert Öl aufs Podest, und der
+  hörbar Luft, die lose Verschraubung sabbert Benzin aufs Podest, und der
   Tank klingt hohl, wenn man ihn klopft. Erst richten, dann füllen,
   dann noch einmal von vorn.
   -> keller
 { tank == 0 }
-  Er springt an, nimmt kurz Fahrt auf und säuft dann ab. Der Tank
+  Er springt an, nimmt kurz Fahrt auf und geht dann aus. Der Tank
   klingt hohl bis an den Boden: Das war der letzte Schluck, und eine
   Nacht ist damit nicht bezahlt.
   -> keller
 { else }
   Er springt an und stirbt nach wenigen Takten: Die Leitung zieht Luft,
-  die lose Verschraubung sabbert Öl aufs Podest. So hält er keine
+  die lose Verschraubung sabbert Benzin aufs Podest. So hält er keine
   Viertelstunde durch, und die Nacht ist länger.
   -> keller
 
@@ -366,6 +391,11 @@ herum, einmal, zweimal.
   -> arbeitsraum
 
 # Die Außenleiter {#leiter}
+
+{ tag and lampe }
+  -> morgen
+{ tag }
+  -> grauermorgen
 
 Eisen, außen am Schaft, vom Salz rund gefressen. Sie spart den halben
 Turm, und sie gehört dem Wind.
@@ -401,8 +431,9 @@ keine dritte.}
   -> leiterfuss
 { proben == 1 and test("geschick") }
   {sturm: Auf halber Höhe nimmt dir eine Bö das Gewicht von den Füßen.
-  Du hältst dich, bis sie es zurückgibt.|Einmal greift die Hand ins
-  Leere, aber der Fuß findet, was die Augen nicht sehen.}
+  Du hältst dich, bis sie es zurückgibt.|Einmal findet die Hand keinen
+  Halt, und einen Atemzug lang tragen dich nur die Füße, bis er wieder
+  da ist.}
   -> leiterfuss
 { proben == 2 and test("geschick") and test("geschick") }
   Zweimal hängt alles an einer Hand: einmal, als die Bö kommt, und
@@ -419,6 +450,12 @@ keine dritte.}
 
 # Am Fuß der Leiter {#leiterfuss}
 
+{ sturm and wasser >= 6 }
+  ~ zeit += 5
+  Unten duckst du dich aus dem Wind. Die Wettertür des Kellers steht einen
+  Fingerbreit offen und rührt sich nicht; dahinter steht das Wasser. Bleibt
+  die Tür des Turms, zwanzig Schritte an der Mauer entlang.
+  -> arbeitsraum
 { sturm }
   Unten duckst du dich aus dem Wind, und die Wettertür des Kellers ist
   die nächste Klinke, die deine Hand findet.
@@ -428,6 +465,11 @@ keine dritte.}
   -> ankunft
 
 # Der Anleger {#anleger}
+
+{ tag and lampe }
+  -> morgen
+{ tag }
+  -> grauermorgen
 
 ~ im_keller = 0
 
@@ -450,13 +492,20 @@ Sturm kommt, gehört der Steg ihr zuerst.}
 
 * [Warten, ob nicht doch etwas kommt](#anleger)
   Du wartest eine halbe Stunde gegen besseres Wissen. Wind und vereinzelt 
-  Seevögel besuchen dich. Der Blick auf den Sonnenuntergang ist malerisch
-  und belohnt dein Warten.
+  Seevögel besuchen dich. {nacht: Vom Abend ist nur ein
+  fahler Streifen unter der Wolkenbank übrig, und auch der geht, während
+  du dastehst.|Der Blick auf den Sonnenuntergang ist malerisch und belohnt
+  dein Warten.}
   ~ zeit += 30
 + [Zurück über die Bank](#ankunft)
   ~ zeit += 5
 
 # Die Kiefern an der Nordkante {#windbruch}
+
+{ tag and lampe }
+  -> morgen
+{ tag }
+  -> grauermorgen
 
 ~ im_keller = 0
 
@@ -497,6 +546,9 @@ kommt, will man nicht unter Holz stehen.}
   der Deckenlampe. Der Strom.
   -> erwachen
 { lampe == 1 }
+  Du legst dich hin, aber von drüben kommt das Brummen des Generators,
+  und über der Bank läuft der Strahl. Schlaf wird daraus nicht. Nach
+  einer Weile stehst du wieder auf.
   -> morgen
 { else }
   -> grauermorgen
