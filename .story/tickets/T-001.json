@@ -1,0 +1,12 @@
+{
+  "blockedBy": [],
+  "completedDate": null,
+  "createdDate": "2026-09-30",
+  "description": "Globale Regel (Tobias, 30.09.2026, ~/.claude/CLAUDE.md): Kein Bauen und Testen mehr über den Simulator-Broker (mcp-server/simulator-broker), in keinem Projekt.\n\nDieses Projekt steht noch nicht in BROKER_ABGELOEST im zentralen pre-push-Hook (mcp-server/ci/hooks/pre-push, der über core.hooksPath global aktiv ist). Jeder Push mit Code baut und testet es deshalb weiterhin über den Broker.\n\nUmstellung nach Vorbild sudoku-app / match-app T-002 / fricton-block-app T-098:\n- eigene Skripte scripts/build.sh und scripts/test.sh (ausführbar), die direkt mit xcodebuild auf den projekteigenen Simulatoren „<projekt> iPhone“ und „<projekt> iPad“ bauen und testen (Geräte anlegen, falls noch nicht vorhanden; nur diese zwei)\n- Projekt-Hook gegen nacktes xcodebuild und mutierendes simctl wie in sudoku-app\n- Ratsche scripts/check-simulator-broker-retired.sh anlegen\n- .localci.conf passend setzen\n- eigener Ein-Zeilen-Commit in mcp-server: Projektname in BROKER_ABGELOEST eintragen (sonst hält die Konsistenzprüfung des Hooks an)\n- CLAUDE.md des Projekts: Broker-Verweise entfernen, Build/Test über die eigenen Skripte beschreiben\n\nAbnahme: Push mit Code läuft über scripts/build.sh + scripts/test.sh, kein simulator-broker-Aufruf mehr (Nutzungsspur prüfen); Simulatoren nach dem Lauf heruntergefahren.\n\nBis zur Umsetzung: keine Pushes mit Code (sie würden über den Broker bauen). Umgesetzt wird, wenn das Projekt Platz hat (Regel „Nur ein aktives Projekt“).",
+  "id": "T-001",
+  "order": 10,
+  "phase": "p0",
+  "status": "open",
+  "title": "Vom Simulator-Broker lösen (eigene Build-/Test-Skripte)",
+  "type": "task"
+}
