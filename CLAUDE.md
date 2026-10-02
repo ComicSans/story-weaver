@@ -43,11 +43,9 @@ node src/cli.js bundle examples/thornwood-book/book.yaml --out build/native
 
 ## Abweichungen von den Workspace-Standards
 
-**Keine lokalen CI-Hooks.** Die zentrale local-CI ist auf Xcode ausgelegt:
-Stage 1 ist der SwiftLint-Gate, Stage 2 baut und testet über den
-simulator-broker. Hier gibt es kein Xcode-Target, sondern ein SwiftPM-Package
-ohne App-Hülle, und ein Hook, der nichts prüft, ist schlechter als keiner, weil
-er Grün meldet. Der Abnahmetest ist deshalb von Hand vor jedem Commit:
+**Lokale CI über `scripts/test.sh`** (social-video T-101): Die Git-Hooks
+kommen aus `~/GitHub/local-ci/hooks`; vor jedem Push läuft `scripts/test.sh`
+(`npm test`). Was darüber hinaus vor jedem Commit von Hand geprüft wird:
 
 ```bash
 node --test 'test/*.test.js'
@@ -65,21 +63,14 @@ das hat nur `hosts/demo/`.
 
 Entschieden mit Tobias am 11.08.2026, um den iOS-Host erweitert am 14.08.2026.
 
-**Die Demo baut und installiert der `simulator-broker`, nie `xcodebuild`.** Das
-Xcode-Projekt ist nicht eingecheckt, also steht `xcodegen` davor; die Bücher
-kompiliert ein Pre-Build-Schritt aus `examples/`, sodass jeder Bau die aktuellen
-Fassungen mitnimmt:
-
-```bash
-cd hosts/demo && xcodegen generate
-```
-
-Danach über die Broker-Werkzeuge: `sim_acquire` auf `build` und das Gerät
-(`device:iphone` für den Simulator, `device:hw-iphone` für iPhone Tobias), dann
-`sim_build` und `sim_install` mit `project: hosts/demo`, `scheme:
-StoryWeaverDemo` und `target: simulator` oder `hardware` - `device:` heißt dort
-in beiden Fällen `iphone`. Am Ende `sim_release`. Screenshots gibt es nur vom
-Simulator; auf dem Gerät ist der Rückgabewert von `sim_install` der Beleg.
+**Die Demo baut `scripts/build.sh`** (social-video T-093): Es erzeugt
+das nicht eingecheckte Xcode-Projekt mit `xcodegen` und baut ohne Gerät über
+die Lauf-Warteschlange von local-ci (`~/GitHub/local-ci/share/xcode-lauf.sh`,
+globale Regeln „Simulatoren und Maschine“). Die Bücher kompiliert ein
+Pre-Build-Schritt aus `examples/`, sodass jeder Bau die aktuellen Fassungen
+mitnimmt. Installieren auf dem Simulator oder auf dem iPhone von Tobias läuft
+ebenfalls über die Warteschlange (`sim-lauf.sh --geraet iphone` bzw. ohne Gerät
+für `devicectl`); den Simulator-Broker gibt es nicht mehr.
 Signiert wird automatisch gegen Team `9DNN6V58J9`; scheitert das, ist es eine
 Sache des Developer-Portals und nicht der Projektdatei.
 
@@ -97,9 +88,8 @@ daraus, bis Tobias widerspricht:
   macOS gegen dasselbe JavaScriptCore und beweist, was hier zu beweisen ist:
   dass die Runtime in JSC dieselbe Geschichte spielt wie in Node. Die
   Typprüfung oben schließt die Lücke, die das lässt. Ein echter Bau für
-  Simulator oder Gerät läuft über `hosts/demo/` und den `simulator-broker`
-  (siehe oben), nicht über dieses Package: dem Broker genügt ein
-  SwiftPM-Package nicht, er braucht ein Xcode-Projekt.
+  Simulator oder Gerät läuft über `hosts/demo/` und `scripts/build.sh`
+  (siehe oben), nicht über dieses Package.
 
 **`examples/intercept/` ist importiert, nicht geschrieben.** Es entsteht aus
 `story-weaver import` über inkles ink-Quelle von *The Intercept* und trägt deren
@@ -182,7 +172,7 @@ they bind the same.
 ### Tooling
 
 - **Code exploration goes through tokensave** - Its MCP tools, not file reads and not Explore agents; a PreToolUse hook enforces this. `tooling.tokensave`
-- **iOS builds, tests, simulators and devices go through `simulator-broker`** - Never `xcodebuild`, `simctl` or `devicectl` directly - scripts and physical devices go through `simulator-broker/src/cli.mjs run --project <name> -- <command>`, and stage 2 of the local CI calls `simulator-broker test` or `build` the same way. The single exemption is input and orientation - taps, swipes, text entry, rotation - through the editor's simulator tools while holding a broker lease for that device; building, installing, launching, screenshots and test runs stay the broker's. `tooling.builds`
+- **iOS builds, tests, simulators and devices go through the local-ci run queue** - Heavy runs use `~/GitHub/local-ci/share/sim-lauf.sh` (here: `scripts/build.sh`); there is no simulator broker any more (global rules, 2026-10-02). `tooling.builds`
 - **Throwaway work goes in the session scratchpad, named so housekeeping finds it** - Working copies, build output and coverage runs go in the session scratchpad, never in a repository or loose in `/tmp`; name build output `build/`, `Build/` or `DerivedData/`. `tooling.scratch`
 - **Task state lives in Storybloq** - Never in `todo.md` or another markdown file. Writing a read-only export is fine; reading state back out of it is not. `tooling.state`
 - **Questions for Tobias go straight to him** - Ask in the chat, set apart at the start of the message, and repeat it until he answers. Never park a decision in a backlog. `tooling.entscheidungen-tobias`
