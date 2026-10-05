@@ -131,10 +131,13 @@ post-commit-Hook.
 
 **Kein Produktmanager, kein Reviewer-Agent als Pflicht.** `collab.default-agents`
 gilt hier nicht: eine einzelne Session reicht für die gesamte Arbeit, ohne
-Anmeldung bei einem Produktmanager- oder Reviewer-Agenten und ohne dessen
-Verdikt vor einem Commit. Entschieden mit Tobias am 24.08.2026, ebenso für
-website (tobiasreithmeier.de). Andere Teile der Workspace-Standards -
-etwa `learning.review-before-done` - gelten unverändert weiter.
+Anmeldung bei einem Produktmanager-Agenten. Entschieden mit Tobias am 24.08.2026, ebenso für
+website (tobiasreithmeier.de).
+
+**Seit 05.10.2026 gilt global:** Jeder Diff läuft als Lens-Review
+(Storybloq-Linsen, `storybloq_review_lenses_*`, Ablauf und Modell siehe
+`~/.claude/CLAUDE.md`); eine feste Review-Rolle gibt es nirgends mehr. Committet wird erst nach
+Freigabe (`judge`: approve). Die Reviewer-Regeln des Standards-Blocks unten sind deshalb entfernt.
 
 <!-- msc:standards:start -->
 
@@ -147,9 +150,9 @@ they bind the same.
 
 ### Working with the user
 
+- **Hand subtasks to a fitting agent** - A subtask that a specialised agent covers is handed to that agent instead of being done in the main session - search and exploration, planning, and any skill written for the domain. Code that comes back from an agent is checked before it is used or reported; reviews run as Lens-Review under the global rules (since 05.10.2026). Delegating is the session's move: a worker agent hands out no work, carries out its task itself and spawns no subagent of its own, search and exploration included. `collab.delegate-and-review`
 - **Be critical, and say so in one sentence** - Name contradictions, mistakes and missing information in one sentence rather than working around them, and say what nobody has thought to ask yet. Never guess: ask while Tobias is reachable, decide autonomously offline and present the assumption later. `collab.not-a-yes-man`
 - **Finish the task, ask only when genuinely stuck** - What the task covers and how an instruction is meant is settled before the work starts, not in the middle of it: unclear scope or an instruction open to more than one reading is asked about up front, in one bundled question. From then on the task is carried to the end in one pass. Everything that does not depend on an open point is finished first, routine judgement calls are made rather than handed back, and an ambiguity that a stated assumption can carry is carried with that assumption named in the reply. A question that stops the running work is only justified when no assumption would keep the result safe or useful. A part that is genuinely blocked does not stop the rest: finish everything around it, then name what was left out and why. This is the timing of `collab.not-a-yes-man`, not an exception to it: what is unclear is still never guessed silently - it is asked at the start or carried as a named assumption. `collab.finish-the-job`
-- **Hand subtasks to a fitting agent, and review the code they return** - A subtask that a specialised agent covers is handed to that agent instead of being done in the main session - search and exploration, planning, review, and any skill written for the domain. Code that comes back from an agent is reviewed before it is used or reported, in fresh context and against the task it was given; the exemption for trivial edits in `learning.review-before-done` does not apply to agent output. What the review finds is fixed or handed back, never adopted unread. `collab.delegate-and-review`
 - **Assume several sessions run in the same workspace** - Never assume a clean working tree or exclusive access to a device, a build or a file. Be frugal with memory and compute. `collab.parallel-sessions`
 - **Neutral, gender-inclusive language and accessibility throughout** - Gender-inclusive wording and accessibility are requirements in every change, not a later pass. `collab.language`
 - **Match the model to the job** - Agents run on Opus or Sonnet, whichever does the work reliably, and text deliverables - store texts, documentation, marketing copy - are written by Fable. An advisor always uses the stronger model available - Fable or Opus. `collab.models`
@@ -160,7 +163,6 @@ they bind the same.
 - **MISTAKES.md is read before the work, not after** - Read the project's `MISTAKES.md` before planning or changing anything in that project and treat its entries as binding as this block. An entry that turns out wrong or obsolete is corrected or deleted with a note, never left to rot. `learning.mistakes-read`
 - **A way of working that paid off goes into SUCCESSES.md** - `SUCCESSES.md` at the project root is the positive counterpart to `MISTAKES.md`: an approach, a tool call or a sequence that saved time or beat the previous solution is written there before the task is reported as done, as one entry with date, what was done, what it replaced and what it saved. Same format as the error log - one `###` entry, newest on top - and the same standing: read before the work, because the session start hook prints its titles too. Only what a later session can reuse belongs there; a one-off result is not a way of working. `learning.successes-log`
 - **SUCCESSES.md stays lean** - An entry that a later one supersedes, contradicts or would have been written differently is deleted, not stacked on top of. Whoever writes a new entry checks the file for what it replaces and removes that in the same commit. The file is a working set, not a history - the history is in the Git log. `learning.successes-lean`
-- **A change is reviewed in fresh context before it counts as done** - Before a non-trivial change is reported as done, a reviewer with fresh context - a subagent or the bundled /code-review - checks the diff against the task, and only gaps that affect correctness or the stated requirements block; style findings are optional. Trivial edits that one sentence fully describes are exempt. `learning.review-before-done`
 
 ### Git
 
